@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import backend.Model.AnunciosModel;
+import backend.Model.UsuariosModel;
 import backend.Repository.IAnunciosRepository;
 
 @Service
@@ -15,11 +16,30 @@ public class AnuncioServiceImp implements IAnuncioService{
     @Autowired
     IAnunciosRepository anunciosRepository;
 
+    @Autowired
+    IUsuarioService usuarioService;
+
+    @Autowired
+    IActividadService actividadService;
+
     @Override
     public AnunciosModel crearAnuncio(AnunciosModel anuncio) {
-        AnunciosModel anuncioRegistrado = anunciosRepository.save(anuncio);
-        System.out.println(anuncioRegistrado);
-        return anuncioRegistrado;
+        UsuariosModel creador = usuarioService.buscarUsuarioPorId(anuncio.getCreadorId());
+        if (creador == null) {
+            throw new IllegalArgumentException("El creador del anuncio no existe.");
+        }
+
+        String rolCreador = creador.getRol().name();
+        if (!"Coordinador".equals(rolCreador) && !"Instructor".equals(rolCreador)) {
+            throw new IllegalArgumentException("Solo coordinadores e instructores pueden publicar anuncios.");
+        }
+
+        if (anuncio.getActividadId() != null) {
+            if (actividadService.obtenerActividadPorId(anuncio.getActividadId()) == null) {
+                throw new IllegalArgumentException("La actividad asociada al anuncio no existe.");
+            }
+        }
+        return anunciosRepository.save(anuncio);
     }
 
     @Override

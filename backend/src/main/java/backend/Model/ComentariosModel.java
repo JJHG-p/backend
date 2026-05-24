@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -33,11 +34,12 @@ public class ComentariosModel {
     @NotBlank
     private String contenido;
 
-    @NotBlank
+    @NotNull(message = "La fecha de publicacion es obligatoria")
     private LocalDate fechaPublicacion;
 
     private List<ArchivoAdjunto> ArchivosAdjuntos;
 
+    @Valid
     private List<ReplicaComentario> ReplicasComentarios;
 
     @JsonSetter("foroId")

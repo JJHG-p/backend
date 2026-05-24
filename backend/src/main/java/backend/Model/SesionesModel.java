@@ -10,7 +10,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,17 +26,16 @@ public class SesionesModel {
     @NotNull
     private ObjectId actividaId;
 
-    @NotBlank
+    @NotNull(message = "La fecha de la sesión es obligatoria")
     private LocalDate fecha;
 
-    @NotBlank
+    @NotNull(message = "La hora de inicio es obligatoria")
     private LocalTime horaInicio;
 
-    @NotBlank
+    @NotNull(message = "La hora de fin es obligatoria")
     private LocalTime horaFin;
 
-    @NotBlank
-    private enum modalidad {Presencial, Virtual, Hibrida}
+    public enum modalidad {Presencial, Virtual, Hibrida}
 
     @NotNull
     private modalidad modalidad;

@@ -15,6 +15,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -58,13 +59,13 @@ public class ActividadesModel {
     private Integer cupoMaximo;
 
     @NotNull(message = "El estado de la actividad es obligatorio")
-    private enum EstadoActividad{Programada, En_Curso, Finalizada, Cancelada, Propuesta};
+    public enum EstadoActividad{Programada, En_Curso, Finalizada, Cancelada, Propuesta};
 
     @NotNull
     private EstadoActividad EstadoActividad;
 
     @Valid
-    @NotNull
+    @NotEmpty(message = "Debe registrar al menos un recurso para la actividad")
     private List<RecursoItem> recursos = new ArrayList<>();
 
     @NotNull(message = "Debe indicarse quién propone la actividad")
@@ -78,6 +79,7 @@ public class ActividadesModel {
 
     private List<InscripcionActividad> inscripciones = new ArrayList<>();
 
+    @Valid
     private List<EvaluacionActividad> evaluaciones = new ArrayList<>();
 
     private ObjectId programaId;

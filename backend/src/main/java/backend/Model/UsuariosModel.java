@@ -47,11 +47,11 @@ public class UsuariosModel {
     @Size(min=7, max = 15)
     private String telefono;
 
-    @NotBlank//revisar
+    @NotBlank
     private String residencia;
 
     @NotNull(message = "El rol es obligatorio")
-    private enum rol{Participante, Instructor, Coordinador, Administrador };
+    public enum rol{Participante, Instructor, Coordinador, Administrador };
 
     @NotNull(message = "El rol es obligatorio")
     private rol rol;
