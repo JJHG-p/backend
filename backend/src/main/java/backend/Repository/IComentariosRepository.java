@@ -8,7 +8,7 @@ import backend.Model.ComentariosModel;
 
 public interface IComentariosRepository extends MongoRepository<ComentariosModel, ObjectId> {
 
-    java.util.List<ComentariosModel> buscarPorForoId (ObjectId foroId);
+    java.util.List<ComentariosModel> findByForoId (ObjectId foroId);
 
     long countByForoId(ObjectId foroId);
 }
