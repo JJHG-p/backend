@@ -32,10 +32,10 @@ public class ActividadesModel {
     @NotBlank(message = "El nombre de la actividad es obligatorio")
     private String nombreActividad;
 
-    @NotBlank(message = "La categoría es obligatoria")
+    @NotNull(message = "La categoría es obligatoria")
     private enum categoria{Arte, Deporte, Tecnologia, Salud, Emprendimiento, Desarrollo_Personal};
 
-    @NotBlank
+    @NotNull
     private categoria categoria;
 
     @NotBlank(message = "La descripción es obligatoria")
@@ -62,7 +62,7 @@ public class ActividadesModel {
     public enum EstadoActividad{Programada, En_Curso, Finalizada, Cancelada, Propuesta};
 
     @NotNull
-    private EstadoActividad EstadoActividad;
+    private EstadoActividad estado;
 
     @Valid
     @NotEmpty(message = "Debe registrar al menos un recurso para la actividad")

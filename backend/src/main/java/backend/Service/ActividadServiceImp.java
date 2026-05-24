@@ -53,7 +53,7 @@ public class ActividadServiceImp implements IActividadService{
             }
         }
 
-        String estado = actividad.getEstadoActividad().name();
+        String estado = actividad.getEstado().name();
 
         if (("Programada".equals(estado) || "En_Curso".equals(estado))) {
             if (actividad.getFechaAprobacion() == null) {
