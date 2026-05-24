@@ -10,7 +10,6 @@ import backend.Model.ComentariosModel;
 import backend.Model.ForosModel;
 import backend.Model.UsuariosModel;
 import backend.Repository.IComentariosRepository;
-import lombok.var;
 
 @Service
 public class ComentarioServiceImp implements IComentarioService{
