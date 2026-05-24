@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import backend.Model.ActividadesModel;
 import backend.Service.IActividadService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/UAO/centroComunitario/actividades")
@@ -22,7 +23,7 @@ public class ActividadesController {
     IActividadService actividadService;
 
     @PostMapping("/")
-    public ResponseEntity<ActividadesModel> crearActividad(@RequestBody ActividadesModel actividad) {
+    public ResponseEntity<ActividadesModel> crearActividad(@Valid@RequestBody ActividadesModel actividad) {
         return new ResponseEntity<>(actividadService.crearActividad(actividad), HttpStatus.CREATED);
     }
 

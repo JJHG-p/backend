@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import backend.Model.ComentariosModel;
 import backend.Service.IComentarioService;
+import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +25,7 @@ public class ComentariosController {
     IComentarioService comentarioService;
 
     @PostMapping("/")
-    public ResponseEntity<ComentariosModel> crearComentario(@RequestBody ComentariosModel comentario) {
+    public ResponseEntity<ComentariosModel> crearComentario(@Valid@RequestBody ComentariosModel comentario) {
         return new ResponseEntity<>(comentarioService.crearComentario(comentario), HttpStatus.CREATED);
     }
 

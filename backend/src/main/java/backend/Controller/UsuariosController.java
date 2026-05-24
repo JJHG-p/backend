@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import backend.Model.UsuariosModel;
 import backend.Service.IUsuarioService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/UAO/centroComunitario/usuarios")
@@ -22,7 +23,7 @@ public class UsuariosController {
     IUsuarioService usuarioService;
 
     @PostMapping("/")
-    public ResponseEntity<UsuariosModel> crearUsuario(@RequestBody UsuariosModel usuario) {        
+    public ResponseEntity<UsuariosModel> crearUsuario(@Valid@RequestBody UsuariosModel usuario) {        
         return new ResponseEntity<>(usuarioService.crearUsuario(usuario), HttpStatus.CREATED);
     }
 

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import backend.Model.SesionesModel;
 import backend.Service.ISesionService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/UAO/centroComunitario/sesiones")
@@ -22,7 +23,7 @@ public class SesionesController {
     ISesionService sesionService;
 
     @PostMapping("/")
-    public ResponseEntity<SesionesModel> crearSesion(@RequestBody SesionesModel sesion) {
+    public ResponseEntity<SesionesModel> crearSesion(@Valid@RequestBody SesionesModel sesion) {
         return new ResponseEntity<>(sesionService.crearSesion(sesion), HttpStatus.CREATED);
     }
 

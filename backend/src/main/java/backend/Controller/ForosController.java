@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import backend.Model.ForosModel;
 import backend.Service.IForoService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/UAO/centroComunitario/foros")
@@ -22,7 +23,7 @@ public class ForosController {
     IForoService foroService;
 
     @PostMapping("/")
-    public ResponseEntity<ForosModel> crearForo(@RequestBody ForosModel foro) {
+    public ResponseEntity<ForosModel> crearForo(@Valid@RequestBody ForosModel foro) {
         return new ResponseEntity<>(foroService.crearForo(foro), HttpStatus.CREATED);
     }
 

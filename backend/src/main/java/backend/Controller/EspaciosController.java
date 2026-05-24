@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import backend.Model.EspaciosModel;
 import backend.Service.IEspacioService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/UAO/centroComunitario/espacios")
@@ -22,7 +23,7 @@ public class EspaciosController {
     IEspacioService espacioService;
 
     @PostMapping("/")
-    public ResponseEntity<EspaciosModel> crearEspacio(@RequestBody EspaciosModel espacio) {
+    public ResponseEntity<EspaciosModel> crearEspacio(@Valid@RequestBody EspaciosModel espacio) {
         return new ResponseEntity<>(espacioService.crearEspacio(espacio), HttpStatus.CREATED);
     }
 

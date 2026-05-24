@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import backend.Model.AnunciosModel;
 import backend.Service.IAnuncioService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/UAO/centroComunitario/anuncios")
@@ -22,7 +23,7 @@ public class AnunciosController {
     IAnuncioService anuncioService;
 
     @PostMapping("/")
-    public ResponseEntity<AnunciosModel> crearAnuncio(@RequestBody AnunciosModel anuncio) {
+    public ResponseEntity<AnunciosModel> crearAnuncio(@Valid@RequestBody AnunciosModel anuncio) {
         return new ResponseEntity<>(anuncioService.crearAnuncio(anuncio), HttpStatus.CREATED);
     }
 

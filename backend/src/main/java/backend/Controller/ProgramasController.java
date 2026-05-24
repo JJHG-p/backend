@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import backend.Model.ProgramasModel;
 import backend.Service.IProgramaService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/UAO/centroComunitario/programas")
@@ -22,7 +23,7 @@ public class ProgramasController {
     IProgramaService programaService;
 
     @PostMapping("/")
-    public ResponseEntity<ProgramasModel> crearPrograma(@RequestBody ProgramasModel programa) {
+    public ResponseEntity<ProgramasModel> crearPrograma(@Valid@RequestBody ProgramasModel programa) {
         return new ResponseEntity<>(programaService.crearPrograma(programa), HttpStatus.CREATED);
     }
 
