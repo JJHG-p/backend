@@ -22,7 +22,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Document(collection = "Actividades")
+@Document(collection = "actividades")
 @NoArgsConstructor
 @AllArgsConstructor
 public class ActividadesModel {
