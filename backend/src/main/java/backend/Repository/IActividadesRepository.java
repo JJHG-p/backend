@@ -7,4 +7,6 @@ import backend.Model.ActividadesModel;
 
 public interface IActividadesRepository extends MongoRepository<ActividadesModel, ObjectId>{
     
+    boolean existsByNombreActividad(String nombreActividad);
+
 }

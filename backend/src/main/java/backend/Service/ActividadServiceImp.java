@@ -100,6 +100,12 @@ public class ActividadServiceImp implements IActividadService{
             }
         }
 
+        boolean existeActividad = actividadesRepository.existsByNombreActividad(actividad.getNombreActividad());
+
+        if (existeActividad) {
+            throw new IllegalArgumentException("La actividad ya existe.");
+        }
+
         return actividadesRepository.save(actividad);
     }
 
