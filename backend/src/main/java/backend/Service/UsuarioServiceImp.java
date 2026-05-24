@@ -1,5 +1,6 @@
 package backend.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.bson.types.ObjectId;
@@ -16,9 +17,21 @@ public class UsuarioServiceImp implements IUsuarioService {
 
     @Override
     public UsuariosModel crearUsuario(UsuariosModel usuario){
-        UsuariosModel usuarioRegistrado = usuariosRepository.save(usuario);
-        System.out.println(usuarioRegistrado);
-        return usuarioRegistrado;
+        if (usuariosRepository.existePorDocumentoID(usuario.getDocumentoID())) {
+            throw new IllegalArgumentException("Ya existe un usuario con el documento: " + usuario.getDocumentoID());
+        }
+
+        if (usuariosRepository.existsByEmailIgnoreCase(usuario.getEmail().trim())) {
+            throw new IllegalArgumentException("Ya existe un usuario con el email: " + usuario.getEmail());
+        }
+
+        if (usuario.getFechaRegistro() == null) {
+            usuario.setFechaRegistro(LocalDate.now());
+        }
+
+        usuario.setActivo(true);
+
+        return usuariosRepository.save(usuario);
     }
 
     @Override

@@ -17,9 +17,7 @@ public class EspacioServiceImp implements IEspacioService{
 
     @Override
     public EspaciosModel crearEspacio(EspaciosModel espacio) {
-        EspaciosModel espacioRegistrado = espaciosRepository.save(espacio);
-        System.out.println(espacioRegistrado);
-        return espacioRegistrado;
+        return espaciosRepository.save(espacio);
     }
 
     @Override

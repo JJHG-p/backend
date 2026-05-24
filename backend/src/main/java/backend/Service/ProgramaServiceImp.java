@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import backend.Model.ProgramasModel;
+import backend.Model.ResponsablePrograma;
+import backend.Model.UsuariosModel;
 import backend.Repository.IProgramasRepository;
 
 @Service
@@ -15,11 +17,42 @@ public class ProgramaServiceImp implements IProgramaService{
     @Autowired
     IProgramasRepository programasRepository;
 
+    @Autowired
+    IUsuarioService usuarioService;
+
     @Override
     public ProgramasModel crearPrograma(ProgramasModel programa) {
-        ProgramasModel programaRegistrado = programasRepository.save(programa);
-        System.out.println(programaRegistrado);
-        return programaRegistrado;
+        if (programa.getFechaFin().isBefore(programa.getFechaInicio())) {
+            throw new IllegalArgumentException("La fecha de fin no puede ser anterior a la fecha de inicio.");
+        }
+
+        for (ResponsablePrograma responsable : programa.getResponsables()) {
+            UsuariosModel usuario = usuarioService.buscarUsuarioPorId(responsable.getResponsableId());
+            if (usuario == null) {
+                throw new IllegalArgumentException("El responsable del programa no existe.");
+            }
+
+            String rol = usuario.getRol().name();
+            if (!"Coordinador".equals(rol) && !"Administrador".equals(rol)) {
+                throw new IllegalArgumentException("Solo coordinadores o administradores pueden ser responsables de un programa.");
+            }
+        }
+
+        if (programa.getInscritos() != null) {
+            programa.getInscritos().forEach(inscrito -> {
+                UsuariosModel usuario = usuarioService.buscarUsuarioPorId(inscrito.getParticipanteId());
+
+                if (usuario == null) {
+                    throw new IllegalArgumentException("El usuario inscrito al programa no existe.");
+                }
+
+                if (!usuario.isActivo()) {
+                    throw new IllegalArgumentException("El usuario inscrito debe estar activo en el sistema.");
+                }
+            });
+        }
+
+        return programasRepository.save(programa);
     }
 
     @Override
