@@ -7,7 +7,7 @@ import backend.Model.AnunciosModel;
 
 public interface IAnunciosRepository extends MongoRepository<AnunciosModel, ObjectId> {
 
-    java.util.List<AnunciosModel> buscarPorActividadId(ObjectId actividaId);
+    java.util.List<AnunciosModel> findByActividadId(ObjectId actividaId);
 
-    java.util.List<AnunciosModel> buscarPorCreadorId(ObjectId creadorId);
+    java.util.List<AnunciosModel> findByCreadorId(ObjectId creadorId);
 }

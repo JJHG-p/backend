@@ -7,5 +7,5 @@ import backend.Model.ForosModel;
 
 public interface IForosRepository extends MongoRepository<ForosModel, ObjectId> {
 
-    java.util.List<ForosModel> buscarPorEstado(ForosModel.Estado estado);
+    java.util.List<ForosModel> findByEstado(ForosModel.Estado estado);
 }

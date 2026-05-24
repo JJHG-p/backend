@@ -7,7 +7,7 @@ import backend.Model.SesionesModel;
 
 public interface ISesionesRepository extends MongoRepository<SesionesModel, ObjectId>{
     
-    java.util.List<SesionesModel> buscarPorActividadId(ObjectId actividadId);
+    java.util.List<SesionesModel> findByActividadId(ObjectId actividadId);
 
-    java.util.List<SesionesModel> buscarPorEspacioIdYFecha(ObjectId espacioId, java.time.LocalDate fecha);
+    java.util.List<SesionesModel> findByEspacioIdAndFecha(ObjectId espacioId, java.time.LocalDate fecha);
 }

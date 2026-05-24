@@ -7,5 +7,5 @@ import backend.Model.EspaciosModel;
 
 public interface IEspaciosRepository extends MongoRepository<EspaciosModel, ObjectId> {
 
-    java.util.List<EspaciosModel> buscarPorDisponibleTrue();
+    java.util.List<EspaciosModel> findByDisponibleTrue();
 }

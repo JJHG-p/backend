@@ -10,5 +10,5 @@ public interface IComentariosRepository extends MongoRepository<ComentariosModel
 
     java.util.List<ComentariosModel> buscarPorForoId (ObjectId foroId);
 
-    long contarPorForoId(ObjectId foroId);
+    long countByForoId(ObjectId foroId);
 }
