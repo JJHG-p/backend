@@ -45,7 +45,7 @@ public class ProgramasModel {
     private String poblacionObjetivo;
 
     @NotBlank
-    private List<ResponsablePrograma> responsables;
+    private List<ResponsablePrograma> responsableId;
 
     private List<ActividadEnPrograma> actividades;
 

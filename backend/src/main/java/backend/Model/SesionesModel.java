@@ -24,7 +24,7 @@ public class SesionesModel {
     private ObjectId id;
 
     @NotNull
-    private ObjectId actividaId;
+    private ObjectId actividadId;
 
     @NotNull(message = "La fecha de la sesión es obligatoria")
     private LocalDate fecha;
@@ -55,12 +55,12 @@ public class SesionesModel {
 
     @JsonProperty("actividadId")
     public void setActividadIdJson(String actividadId){
-        this.actividaId = (actividaId == null) ? null : new ObjectId(actividadId);
+        this.actividadId = (actividadId == null) ? null : new ObjectId(actividadId);
     }
 
     @JsonProperty("actividadId")
     public String getActividadIdJson(){
-        return actividaId != null ? actividaId.toHexString() : null;
+        return actividadId != null ? actividadId.toHexString() : null;
     }
 
     @JsonProperty("espacioId")

@@ -28,7 +28,7 @@ public class SesionServiceImp implements ISesionService{
 
     @Override
     public SesionesModel crearSesion(SesionesModel sesion) {
-        ActividadesModel actividad = actividadService.buscarActividadPorId(sesion.getActividaId());
+        ActividadesModel actividad = actividadService.buscarActividadPorId(sesion.getActividadId());
 
         if (actividad == null) {
             throw new IllegalArgumentException("La actividad con el ID proporcionado no existe.");
