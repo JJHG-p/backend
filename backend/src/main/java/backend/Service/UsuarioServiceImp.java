@@ -17,7 +17,7 @@ public class UsuarioServiceImp implements IUsuarioService {
 
     @Override
     public UsuariosModel crearUsuario(UsuariosModel usuario){
-        if (usuariosRepository.existePorDocumentoID(usuario.getDocumentoID())) {
+        if (usuariosRepository.existsByDocumentoID(usuario.getDocumentoID())) {
             throw new IllegalArgumentException("Ya existe un usuario con el documento: " + usuario.getDocumentoID());
         }
 

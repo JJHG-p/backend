@@ -6,7 +6,7 @@ import backend.Model.UsuariosModel;
 
 public interface IUsuariosRepository extends MongoRepository<UsuariosModel, ObjectId>{
     
-    boolean existePorDocumentoID(String documentoID);
+    boolean existsByDocumentoID(String documentoID);
 
     boolean existsByEmailIgnoreCase(String email);
 }
