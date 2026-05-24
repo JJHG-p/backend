@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import org.bson.types.ObjectId;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,4 +29,9 @@ public class InscripcionActividad {
 
     @NotNull
     private estado estado;
+
+    @JsonSetter("participanteId")
+    public void setParticipanteIdJson(String participanteId) {
+    this.participanteId = (participanteId == null) ? null : new ObjectId(participanteId);
+    }
 }

@@ -2,6 +2,7 @@ package backend.Model;
 
 import org.bson.types.ObjectId;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -21,11 +22,16 @@ public class SeguimientoActividad {
     public String comentarios;
 
     @NotBlank
-    public String aspectosEvaluados;
+    public String aspectosEvaluado;
 
     @NotBlank
     public String nivelProgreso;
 
     @NotBlank
     private String observaciones;
+
+    @JsonSetter("participanteId")
+    public void setParticipanteIdJson(String participanteId) {
+    this.participanteId = (participanteId == null) ? null : new ObjectId(participanteId);
+    }
 }

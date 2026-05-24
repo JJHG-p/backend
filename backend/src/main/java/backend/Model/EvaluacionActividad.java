@@ -2,6 +2,8 @@ package backend.Model;
 
 import org.bson.types.ObjectId;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -30,4 +32,9 @@ public class EvaluacionActividad {
 
     @NotBlank
     private String sugerencias;
+
+    @JsonSetter("participanteId")
+    public void setParticipanteIdJson(String participanteId) {
+    this.participanteId = (participanteId == null) ? null : new ObjectId(participanteId);
+    }
 }
