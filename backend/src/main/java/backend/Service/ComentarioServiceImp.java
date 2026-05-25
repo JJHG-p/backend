@@ -25,6 +25,11 @@ public class ComentarioServiceImp implements IComentarioService{
 
     @Override
     public ComentariosModel crearComentario(ComentariosModel comentario) {
+
+        if (comentariosRepository.existsByForoIdAndUsuarioIdAndContenidoIgnoreCase(comentario.getForoId(), comentario.getUsuarioId(), comentario.getContenido())) {
+            throw new IllegalArgumentException("Ya existe un comentario igual publicado por este usuario en el foro.");
+        }
+
         ForosModel foro = foroService.buscarForoPorId(comentario.getForoId());
         if (foro == null) {
             throw new IllegalArgumentException("El foro no existe.");

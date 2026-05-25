@@ -8,4 +8,6 @@ import backend.Model.ProgramasModel;
 public interface IProgramasRepository extends MongoRepository<ProgramasModel, ObjectId> {
 
     java.util.List<ProgramasModel> findByResponsablesResponsableId(ObjectId responsableId);
+
+    boolean existsByNombreIgnoreCase(String nombre);
 }

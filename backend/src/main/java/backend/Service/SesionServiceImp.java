@@ -34,6 +34,10 @@ public class SesionServiceImp implements ISesionService{
             throw new IllegalArgumentException("La actividad con el ID proporcionado no existe.");
         }
 
+        if (sesionesRepository.existsByActividadIdAndFechaAndHoraInicio(sesion.getActividadId(), sesion.getFecha(), sesion.getHoraInicio())) {
+            throw new IllegalArgumentException("Ya existe una sesión programada para esta actividad en esa fecha y hora.");
+        }
+
         if (!sesion.getHoraFin().isAfter(sesion.getHoraInicio())) {
             throw new IllegalArgumentException("La hora de fin no puede ser anterior o igual a la hora de inicio.");
         }

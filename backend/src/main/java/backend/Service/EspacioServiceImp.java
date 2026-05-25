@@ -17,6 +17,9 @@ public class EspacioServiceImp implements IEspacioService{
 
     @Override
     public EspaciosModel crearEspacio(EspaciosModel espacio) {
+        if (espaciosRepository.existsByNombreIgnoreCaseAndUbicacionIgnoreCase(espacio.getNombre(), espacio.getUbicacion())) {
+            throw new IllegalArgumentException("Ya existe un espacio con ese nombre y ubicación.");
+        }
         return espaciosRepository.save(espacio);
     }
 

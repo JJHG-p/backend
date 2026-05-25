@@ -8,4 +8,6 @@ import backend.Model.EspaciosModel;
 public interface IEspaciosRepository extends MongoRepository<EspaciosModel, ObjectId> {
 
     java.util.List<EspaciosModel> findByDisponibleTrue();
+
+    boolean existsByNombreIgnoreCaseAndUbicacionIgnoreCase (String nombre, String ubicacion);
 }

@@ -22,6 +22,11 @@ public class ProgramaServiceImp implements IProgramaService{
 
     @Override
     public ProgramasModel crearPrograma(ProgramasModel programa) {
+
+        if (programasRepository.existsByNombreIgnoreCase(programa.getNombre())) {
+            throw new IllegalArgumentException("Ya existe un programa con ese nombre.");
+        }
+
         if (programa.getFechaFin().isBefore(programa.getFechaInicio())) {
             throw new IllegalArgumentException("La fecha de fin no puede ser anterior a la fecha de inicio.");
         }

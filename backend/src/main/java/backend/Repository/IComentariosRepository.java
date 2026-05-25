@@ -11,4 +11,6 @@ public interface IComentariosRepository extends MongoRepository<ComentariosModel
     java.util.List<ComentariosModel> findByForoId (ObjectId foroId);
 
     long countByForoId(ObjectId foroId);
+
+    boolean existsByForoIdAndUsuarioIdAndContenidoIgnoreCase(ObjectId foroId, ObjectId usuarioId, String contenido);
 }
