@@ -10,4 +10,5 @@ public interface IComentarioService {
     ComentariosModel crearComentario(ComentariosModel comentario);
     List<ComentariosModel> listarComentarios();
     ComentariosModel buscarComentarioPorId(ObjectId id);
+    ComentariosModel actualizarComentario (ObjectId id, ComentariosModel comentarioActualizado);
 }

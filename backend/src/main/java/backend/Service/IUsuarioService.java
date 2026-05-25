@@ -10,4 +10,5 @@ public interface IUsuarioService {
     public UsuariosModel crearUsuario(UsuariosModel usuario);
     public List<UsuariosModel> listarUsuarios();
     public UsuariosModel buscarUsuarioPorId(ObjectId idUsuario);
+    public UsuariosModel actualizarUsuario(ObjectId id, UsuariosModel usuarioActualizado);
 }

@@ -98,4 +98,17 @@ public class SesionServiceImp implements ISesionService{
     public SesionesModel buscarSesionPorId(ObjectId id) {
         return sesionesRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public SesionesModel actualizarSesion (ObjectId id, SesionesModel sesionActualizada) {
+        SesionesModel sesionExistente = sesionesRepository.findById(id).orElse(null);
+
+        if (sesionExistente == null) {
+            throw new IllegalArgumentException("La sesion no existe.");
+        }
+
+        sesionActualizada.setId(id);
+
+        return sesionesRepository.save(sesionActualizada);
+    }
 }

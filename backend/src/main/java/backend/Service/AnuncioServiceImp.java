@@ -51,4 +51,17 @@ public class AnuncioServiceImp implements IAnuncioService{
     public AnunciosModel buscarAnuncioPorId(ObjectId id) {
         return anunciosRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public AnunciosModel actualizarAnuncio (ObjectId id, AnunciosModel anuncioActualizado) {
+        AnunciosModel anuncioExistente = anunciosRepository.findById(id).orElse(null);
+
+        if (anuncioExistente == null) {
+            throw new IllegalArgumentException("El anuncio no existe.");
+        }
+
+        anuncioActualizado.setId(id);
+
+        return anunciosRepository.save(anuncioActualizado);
+    }
 }

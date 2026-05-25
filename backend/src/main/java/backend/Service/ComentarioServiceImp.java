@@ -63,4 +63,17 @@ public class ComentarioServiceImp implements IComentarioService{
     public ComentariosModel buscarComentarioPorId(ObjectId id) {
         return comentariosRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public ComentariosModel actualizarComentario (ObjectId id, ComentariosModel comentarioActualizado) {
+        ComentariosModel comentarioExistente = comentariosRepository.findById(id).orElse(null);
+
+        if (comentarioExistente == null) {
+            throw new IllegalArgumentException("El comentario no existe.");
+        }
+
+        comentarioActualizado.setId(id);
+
+        return comentariosRepository.save(comentarioActualizado);
+    }
 }

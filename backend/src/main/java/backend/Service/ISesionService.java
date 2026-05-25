@@ -10,4 +10,5 @@ public interface ISesionService {
     SesionesModel crearSesion(SesionesModel sesion);
     List<SesionesModel> listarSesiones();
     SesionesModel buscarSesionPorId(ObjectId id);
+    SesionesModel actualizarSesion (ObjectId id, SesionesModel sesionActualizada);
 }

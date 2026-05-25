@@ -64,4 +64,17 @@ public class ProgramaServiceImp implements IProgramaService{
     public ProgramasModel buscarProgramaPorId(ObjectId id) {
         return programasRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public ProgramasModel actualizarPrograma (ObjectId id, ProgramasModel programaActualizado) {
+        ProgramasModel programaExistente = programasRepository.findById(id).orElse(null);
+
+        if (programaExistente == null) {
+            throw new IllegalArgumentException("El programa no existe.");
+        }
+
+        programaActualizado.setId(id);
+
+        return programasRepository.save(programaActualizado);
+    }
 }

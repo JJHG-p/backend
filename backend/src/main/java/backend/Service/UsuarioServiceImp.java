@@ -43,4 +43,17 @@ public class UsuarioServiceImp implements IUsuarioService {
     public UsuariosModel buscarUsuarioPorId(ObjectId id){
         return usuariosRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public UsuariosModel actualizarUsuario(ObjectId id, UsuariosModel usuarioActualizado) {
+        UsuariosModel usuarioExistente = usuariosRepository.findById(id).orElse(null);
+
+        if (usuarioExistente == null) {
+            throw new IllegalArgumentException("El usuario no existe.");
+        }
+
+        usuarioActualizado.setId(id);
+
+        return usuariosRepository.save(usuarioActualizado);
+    }
 }

@@ -10,4 +10,5 @@ public interface IProgramaService {
     ProgramasModel crearPrograma(ProgramasModel programa);
     List<ProgramasModel> listarProgramas();
     ProgramasModel buscarProgramaPorId(ObjectId id);
+    ProgramasModel actualizarPrograma (ObjectId id, ProgramasModel programaActualizado);
 }

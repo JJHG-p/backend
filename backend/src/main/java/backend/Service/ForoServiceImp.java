@@ -47,4 +47,17 @@ public class ForoServiceImp implements IForoService{
     public ForosModel buscarForoPorId(ObjectId id) {
         return forosRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public ForosModel actualizarForo (ObjectId id, ForosModel foroActualizado) {
+        ForosModel foroExistente = forosRepository.findById(id).orElse(null);
+
+        if (foroExistente == null) {
+            throw new IllegalArgumentException("El foro no existe");
+        }
+
+        foroActualizado.setId(id);
+
+        return forosRepository.save(foroActualizado);
+    }
 }

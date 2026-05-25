@@ -10,4 +10,5 @@ public interface IEspacioService {
     EspaciosModel crearEspacio(EspaciosModel espacio);
     List<EspaciosModel> listarEspacios();
     EspaciosModel buscarEspacioPorId(ObjectId id);
+    EspaciosModel actualizarEspacio (ObjectId id, EspaciosModel espacioActualizado);
 }

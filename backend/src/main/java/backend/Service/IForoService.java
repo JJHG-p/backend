@@ -10,4 +10,5 @@ public interface IForoService {
     ForosModel crearForo(ForosModel foro);
     List<ForosModel> listarForos();
     ForosModel buscarForoPorId(ObjectId id);
+    ForosModel actualizarForo (ObjectId id, ForosModel foroActualizado);
 }

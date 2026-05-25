@@ -10,4 +10,5 @@ public interface IAnuncioService {
     AnunciosModel crearAnuncio(AnunciosModel anuncio);
     List<AnunciosModel> listarAnuncios();
     AnunciosModel buscarAnuncioPorId(ObjectId id);
+    AnunciosModel actualizarAnuncio (ObjectId id, AnunciosModel anuncioActualizado);
 }

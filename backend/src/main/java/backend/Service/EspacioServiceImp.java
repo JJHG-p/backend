@@ -29,4 +29,17 @@ public class EspacioServiceImp implements IEspacioService{
     public EspaciosModel buscarEspacioPorId(ObjectId id) {
         return espaciosRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public EspaciosModel actualizarEspacio (ObjectId id, EspaciosModel espacioActualizado) {
+        EspaciosModel espacioExistente = espaciosRepository.findById(id).orElse(null);
+
+        if (espacioExistente == null) {
+            throw new IllegalArgumentException("El espacio no existe.");
+        }
+
+        espacioActualizado.setId(id);
+
+        return espaciosRepository.save(espacioActualizado);
+    }
 }
