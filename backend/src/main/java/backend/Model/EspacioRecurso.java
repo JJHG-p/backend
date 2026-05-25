@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class EspacioRecurso {
     
     @NotBlank
-    private enum tipo {inmobiliario, tecnologico}
+    private enum tipo {Inmobiliario, Tecnologico}
 
     @NotNull
     private tipo tipo;
