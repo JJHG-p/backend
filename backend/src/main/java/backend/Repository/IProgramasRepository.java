@@ -7,5 +7,5 @@ import backend.Model.ProgramasModel;
 
 public interface IProgramasRepository extends MongoRepository<ProgramasModel, ObjectId> {
 
-    java.util.List<ProgramasModel> findByResponsableId(ObjectId responsableId);
+    java.util.List<ProgramasModel> findByResponsablesResponsableId(ObjectId responsableId);
 }

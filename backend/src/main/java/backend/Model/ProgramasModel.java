@@ -35,17 +35,17 @@ public class ProgramasModel {
     @NotBlank
     private String descripcion;
 
-    @NotBlank
+    @NotNull
     private LocalDate fechaInicio;
 
-    @NotBlank
+    @NotNull
     private LocalDate fechaFin;
 
     @NotBlank
     private String poblacionObjetivo;
 
-    @NotBlank
-    private List<ResponsablePrograma> responsableId;
+    @NotNull
+    private List<ResponsablePrograma> responsables;
 
     private List<ActividadEnPrograma> actividades;
 

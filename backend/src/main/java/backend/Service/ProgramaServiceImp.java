@@ -26,7 +26,7 @@ public class ProgramaServiceImp implements IProgramaService{
             throw new IllegalArgumentException("La fecha de fin no puede ser anterior a la fecha de inicio.");
         }
 
-        for (ResponsablePrograma responsable : programa.getResponsableId()) {
+        for (ResponsablePrograma responsable : programa.getResponsables()) {
             UsuariosModel usuario = usuarioService.buscarUsuarioPorId(responsable.getResponsableId());
             if (usuario == null) {
                 throw new IllegalArgumentException("El responsable del programa no existe.");

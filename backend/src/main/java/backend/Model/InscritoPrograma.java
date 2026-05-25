@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import org.bson.types.ObjectId;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,6 @@ public class InscritoPrograma {
     @NotBlank
     private String nombreParticipante;
 
-    @NotBlank
+    @NotNull
     private LocalDate fechaInscripcion;
 }
