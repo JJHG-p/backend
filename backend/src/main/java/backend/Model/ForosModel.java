@@ -41,8 +41,7 @@ public class ForosModel {
     @NotNull
     private Estado estado;
 
-    @NotNull
-    private List<ArchivoAdjunto> ArchivosAdjuntos;
+    private List<ArchivoAdjunto> archivosAdjuntos;
 
 
     @JsonProperty("creadorId")

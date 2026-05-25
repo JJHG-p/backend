@@ -31,6 +31,10 @@ public class ForoServiceImp implements IForoService{
             throw new IllegalArgumentException("Solo Coordinadores e Instructores pueden abrir foros.");
         }
 
+        if (forosRepository.existsByTitulo(foro.getTitulo())) {
+            throw new IllegalArgumentException("Ya existe un foro con ese título.");
+        }
+
         return forosRepository.save(foro);
     }
 
