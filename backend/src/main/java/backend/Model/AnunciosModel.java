@@ -29,7 +29,7 @@ public class AnunciosModel {
     @NotBlank
     private String contenido;
 
-    @NotBlank
+    @NotNull(message = "La fecha de publicación es obligatoria")
     private LocalDate fechaPublicacion;
 
     @NotNull
