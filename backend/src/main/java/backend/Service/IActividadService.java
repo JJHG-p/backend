@@ -12,4 +12,5 @@ public interface IActividadService {
     List<ActividadesModel> listarActividades();
     ActividadesModel buscarActividadPorId(ObjectId id);
     ActividadesModel obtenerActividadPorId(ObjectId id);
+    ActividadesModel actualizarActividad(ObjectId id, ActividadesModel actividadActualizada);
 }

@@ -136,4 +136,16 @@ public class ActividadServiceImp implements IActividadService{
     public ActividadesModel obtenerActividadPorId(ObjectId id){
         return buscarActividadPorId(id);
     }
+
+    @Override
+    public ActividadesModel actualizarActividad(ObjectId id, ActividadesModel actividadActualizada){
+        ActividadesModel actividadExistente = actividadesRepository.findById(id).orElse(null);
+        if (actividadExistente == null) {
+            throw new IllegalArgumentException("La actividad no existe.");
+        }
+
+        actividadActualizada.setId(id);
+
+        return actividadesRepository.save(actividadActualizada);
+    }
 }
