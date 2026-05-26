@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 import backend.Model.ActividadesModel;
 import backend.Model.EvaluacionActividad;
 import backend.Model.InscripcionActividad;
+import backend.Model.ProgramasModel;
 import backend.Model.UsuariosModel;
 import backend.Repository.IActividadesRepository;
+import backend.Repository.IProgramasRepository;
 
 @Service
 public class ActividadServiceImp implements IActividadService{
@@ -19,6 +21,9 @@ public class ActividadServiceImp implements IActividadService{
 
     @Autowired
     IUsuarioService usuarioService;
+
+    @Autowired
+    IProgramasRepository programasRepository;
 
     @Override
     public ActividadesModel crearActividad(ActividadesModel actividad) {
@@ -146,6 +151,31 @@ public class ActividadServiceImp implements IActividadService{
 
         actividadActualizada.setId(id);
 
-        return actividadesRepository.save(actividadActualizada);
+        ActividadesModel actividadGuardada = actividadesRepository.save(actividadActualizada);
+
+        actualizarActividadEnProgramas(actividadGuardada);
+
+        return actividadGuardada;
+    }
+
+    private void actualizarActividadEnProgramas(ActividadesModel actividad) {
+        List<ProgramasModel> programas = programasRepository.findAll();
+
+        for (ProgramasModel programa : programas) {
+            boolean actualizado = false;
+            if (programa.getActividades() != null) {
+                for (var actividadPrograma : programa.getActividades()){
+                    if (actividadPrograma.getActividadId().equals(actividad.getId())) {
+                        actividadPrograma.setNombreActividad(actividad.getNombreActividad());
+
+                        actualizado = true;
+                    }
+                }
+            }
+
+            if (actualizado) {
+                programasRepository.save(programa);
+            }
+        }
     }
 }

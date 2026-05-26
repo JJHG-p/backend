@@ -41,12 +41,20 @@ public class ForosModel {
     @NotNull
     private Estado estado;
 
+    @NotNull
+    private ObjectId actividadId;
+
     private List<ArchivoAdjunto> archivosAdjuntos;
 
 
     @JsonProperty("creadorId")
     public void setCreadorIdJson(String creadorId){
         this.creadorId = (creadorId == null) ? null : new ObjectId(creadorId);
+    }
+
+    @JsonProperty("actividadId")
+    public void setActividadIdJson(String actividadId){
+        this.actividadId = (actividadId == null) ? null : new ObjectId(actividadId);
     }
 
     @JsonProperty("id")
@@ -57,5 +65,10 @@ public class ForosModel {
     @JsonProperty("creadorId")
     public String getCreadorIdAsString(){
         return creadorId != null ? creadorId.toHexString() : null;
+    }
+
+    @JsonProperty("actividadId")
+    public String getActividadIdAsString(){
+        return actividadId != null ? actividadId.toHexString() : null;
     }
 }
