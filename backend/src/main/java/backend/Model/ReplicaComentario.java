@@ -21,7 +21,7 @@ public class ReplicaComentario {
     @NotBlank
     private String contenido;
 
-    @NotBlank
+    @NotNull
     private LocalDate fechaPublicacion;
 
     private List<ArchivoAdjunto> archivosAdjuntos;

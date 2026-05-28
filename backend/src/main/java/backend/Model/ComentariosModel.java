@@ -37,10 +37,10 @@ public class ComentariosModel {
     @NotNull(message = "La fecha de publicacion es obligatoria")
     private LocalDate fechaPublicacion;
 
-    private List<ArchivoAdjunto> ArchivosAdjuntos;
+    private List<ArchivoAdjunto> archivosAdjuntos;
 
     @Valid
-    private List<ReplicaComentario> ReplicasComentarios;
+    private List<ReplicaComentario> replicasComentarios;
 
     @JsonSetter("foroId")
     public void setForoIdJson(String foroId) {
