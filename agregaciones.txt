@@ -1,0 +1,198 @@
+Juan José Hinestroza Guasguita – 2240080
+Julian Andres Zapata Posada - 2240291
+David Santiago Granados Villamarín – 2240194
+
+
+Agregación 1: Para ver cuántas inscripciones tiene cada actividad y ordenarlas de la que tiene más participación a la que tiene menos.
+
+db.getCollection('actividades').aggregate(
+  [
+    { $unwind: { path: '$inscripciones' } },
+    {
+      $group: {
+        _id: '$_id',
+        nombreActividad: {
+          $first: '$nombreActividad'
+        },
+        categoria: { $first: '$categoria' },
+        estado: { $first: '$estado' },
+        cupoMaximo: { $first: '$cupoMaximo' },
+        fechaInicio: { $first: '$fechaInicio' },
+        totalInscripciones: { $sum: 1 }
+      }
+    },
+    {
+      $project: {
+        _id: 0,
+        nombreActividad: 1,
+        categoria: 1,
+        estado: 1,
+        cupoMaximo: 1,
+        fechaInicio: 1,
+        totalInscripciones: 1
+      }
+    },
+    { $sort: { totalInscripciones: -1 } }
+  ],
+  { maxTimeMS: 60000, allowDiskUse: true }
+);
+
+
+Agregación 2: para ver qué actividades están mejor valoradas por los participantes, calcular el promedio de sus evaluaciones y ordenarlas de la mejor a la peor calificada, para así identificar cuáles están funcionando mejor y cuáles podrían necesitar mejoras.
+
+db.getCollection('actividades').aggregate(
+  [
+    { $unwind: { path: '$evaluaciones' } },
+    {
+      $group: {
+        _id: '$_id',
+        nombreActividad: {
+          $first: '$nombreActividad'
+        },
+        categoria: { $first: '$categoria' },
+        estado: { $first: '$estado' },
+        fechaInicio: { $first: '$fechaInicio' },
+        totalEvaluaciones: { $sum: 1 },
+        valoracionPromedio: {
+          $avg: '$evaluaciones.valoracionNumerica'
+        },
+        valoracionMaxima: {
+          $max: '$evaluaciones.valoracionNumerica'
+        },
+        valoracionMinima: {
+          $min: '$evaluaciones.valoracionNumerica'
+        }
+      }
+    },
+    {
+      $project: {
+        _id: 0,
+        nombreActividad: 1,
+        categoria: 1,
+        estado: 1,
+        fechaInicio: 1,
+        totalEvaluaciones: 1,
+        valoracionPromedio: 1,
+        valoracionMaxima: 1,
+        valoracionMinima: 1
+      }
+    },
+    { $sort: { valoracionPromedio: -1 } }
+  ],
+  { maxTimeMS: 60000, allowDiskUse: true }
+);
+
+
+Agregación 3: Para ver cuántos usuarios hay por rol, calcular su edad promedio y ordenarlos de los más frecuentes a los menos frecuentes.
+
+db.getCollection('usuarios').aggregate(
+  [
+    {
+      $group: {
+        _id: '$rol',
+        totalUsuarios: { $sum: 1 },
+        edadPromedio: { $avg: '$edad' },
+        edadMaxima: { $max: '$edad' },
+        edadMinima: { $min: '$edad' }
+      }
+    },
+    {
+      $project: {
+        _id: 0,
+        rol: '$_id',
+        totalUsuarios: 1,
+        edadPromedio: 1,
+        edadMaxima: 1,
+        edadMinima: 1
+      }
+    },
+    { $sort: { totalUsuarios: -1 } }
+  ],
+  { maxTimeMS: 60000, allowDiskUse: true }
+);
+
+Agregación 4: Para ver cuáles comentarios generan más interacción dentro de un foro, contando sus réplicas y comparando cuáles han recibido más respuesta, para identificar los temas o mensajes que provocan más conversación.
+
+db.getCollection('comentarios').aggregate(
+  [
+    { $unwind: { path: '$replicasComentarios' } },
+    {
+      $group: {
+        _id: '$_id',
+        foroId: { $first: '$foroId' },
+        usuarioId: { $first: '$usuarioId' },
+        contenido: { $first: '$contenido' },
+        fechaPublicacion: {
+          $first: '$fechaPublicacion'
+        },
+        totalReplicas: { $sum: 1 },
+        fechaReplicaMasAntigua: {
+          $min: '$replicasComentarios.fechaPublicacion'
+        },
+        fechaReplicaMasReciente: {
+          $max: '$replicasComentarios.fechaPublicacion'
+        }
+      }
+    },
+    {
+      $project: {
+        _id: 0,
+        comentarioId: '$_id',
+        foroId: 1,
+        usuarioId: 1,
+        contenido: 1,
+        fechaPublicacion: 1,
+        totalReplicas: 1,
+        fechaReplicaMasAntigua: 1,
+        fechaReplicaMasReciente: 1
+      }
+    },
+    { $sort: { totalReplicas: -1 } }
+  ],
+  { maxTimeMS: 60000, allowDiskUse: true }
+);
+
+Agregación 5: Para analizar cómo se están publicando los foros a lo largo del tiempo y por estado, además de medir cuántos archivos adjuntos acompañan esas publicaciones, lo que permite identificar meses con más actividad y foros con más contenido asociado.
+
+db.getCollection('foros').aggregate(
+  [
+    {
+      $project: {
+        titulo: 1,
+        estado: 1,
+        actividadId: 1,
+        creadorId: 1,
+        fechaPublicacion: 1,
+        totalAdjuntos: {
+          $size: {
+            $ifNull: ['$archivosAdjuntos', []]
+          }
+        }
+      }
+    },
+    {
+      $group: {
+        _id: {
+          estado: '$estado',
+          mesPublicacion: {
+            $dateTrunc: {
+              date: '$fechaPublicacion',
+              unit: 'month'
+            }
+          }
+        },
+        totalForos: { $sum: 1 },
+        adjuntosTotales: {
+          $sum: '$totalAdjuntos'
+        }
+      }
+    },
+    {
+      $sort: {
+        '_id.mesPublicacion': 1,
+        totalForos: -1
+      }
+    }
+  ],
+  { maxTimeMS: 60000, allowDiskUse: true }
+);

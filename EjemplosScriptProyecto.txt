@@ -1,0 +1,192 @@
+db.usuarios.insert({
+    "_id": ObjectId("d96897f0c811a42af3590733"),
+    "nombre": "Lorem",
+    "documentoID": "Lorem",
+    "edad": Int32(1156442924),
+    "email": "Lorem",
+    "telefono": "Lorem",
+    "residencia": "Lorem",
+    "rol": "Participante",
+    "fechaRegistro": ISODate("2016-04-08T15:06:21.595Z"),
+    "activo": true
+});
+
+db.actividades.insert({
+    "_id": ObjectId("40cb7114407697cca78df1f9"),
+    "nombreActividad": "Lorem",
+    "categoria": "Arte",
+    "descripcion": "Lorem",
+    "objetivo": "Lorem",
+    "fechaInicio": ISODate("2016-04-08T15:06:21.595Z"),
+    "fechaFin": ISODate("2016-04-08T15:06:21.595Z"),
+    "intensidadHoraria": Int32(1909319702),
+    "cupoMaximo": Int32(-2068377500),
+    "estado": "Programada",
+    "recursos": [
+        {
+            "nombre": "Lorem",
+            "tipo": "Lorem"
+        }
+    ],
+    "propuestoPor": ObjectId("ea3def2cf4bbce4e61b6fd0e"),
+    "fechaAprobacion": ISODate("2016-04-08T15:06:21.595Z"),
+    "aprobadoPor": ObjectId("a8cc6ae8be7a79df9cbfec8c"),
+    "impartidoPor": ObjectId("dc9a1514b396b1a9a2e6b862"),
+    "inscripciones": [
+        {
+            "participanteId": ObjectId("a02d2b5f8be67a94cda12c35"),
+            "nombreParticipante": "Lorem",
+            "fecha": ISODate("2016-04-08T15:06:21.595Z"),
+            "estado": "Inscrito"
+        }
+    ],
+    "evaluaciones": [
+        {
+            "participanteId": ObjectId("ea5a6dacae794f0b7cbaeeaa"),
+            "nombre": "Lorem",
+            "valoracionNumerica": Int32(-2068377500),
+            "observaciones": "Lorem",
+            "sugerencias": "Lorem"
+        }
+    ],
+    "programaId": ObjectId("5e067eeaeb0babd1aa0ca648"),
+    "seguimientos": [
+        {
+            "participanteId": ObjectId("bdeb4ddd514615c0cce9ed11"),
+            "comentarios": "Lorem",
+            "aspectosEvaluado": "Lorem",
+            "nivelProgreso": "Lorem",
+            "observaciones": "Lorem"
+        }
+    ]
+});
+
+db.sesiones.insert({
+    "_id": ObjectId("dfaa444fedbf2fc54dbea208"),
+    "actividadId": ObjectId("46a2fee7f0812d078fa880ad"),
+    "fecha": ISODate("2016-04-08T15:06:21.595Z"),
+    "horaInicio": ISODate("2016-04-08T15:06:21.595Z"),
+    "horaFin": ISODate("2016-04-08T15:06:21.595Z"),
+    "modalidad": "Presencial",
+    "espacioId": ObjectId("cbba71cdeb843aa5ab159782"),
+    "enlace": "Lorem",
+    "asistencias": [
+        {
+            "usuarioId": ObjectId("2e8e5a91b0a9d84bb3ed4bd4"),
+            "nombreUsuario": "Lorem",
+            "estado": true,
+            "observacion": "Lorem"
+        }
+    ],
+    "archivosAdjuntos": [
+        {
+            "nombre": "Lorem",
+            "tipo": "PDF",
+            "URL": "Lorem",
+            "descripcion": "Lorem"
+        }
+    ]
+});
+
+db.programas.insert({
+    "_id": ObjectId("5e4fa4c28d380cbafcd2237c"),
+    "tipo": "Jornada_de_salud",
+    "nombre": "Lorem",
+    "descripcion": "Lorem",
+    "fechaInicio": ISODate("2016-04-08T15:06:21.595Z"),
+    "fechaFin": ISODate("2016-04-08T15:06:21.595Z"),
+    "poblacionObjetivo": "Lorem",
+    "responsables": [
+        {
+            "responsableId": ObjectId("f3fe05749c1ad817fda03ed4"),
+            "nombreResponsable": "Lorem"
+        }
+    ],
+    "actividades": [
+        {
+            "actividadId": ObjectId("b6ce11ac3dd5e146361c2ed8"),
+            "nombreActividad": "Lorem"
+        }
+    ],
+    "inscritos": [
+        {
+            "participanteId": ObjectId("33d95dd9ae9b7014aa4d41ab"),
+            "nombreParticipante": "Lorem",
+            "fechaInscripcion": ISODate("2016-04-08T15:06:21.595Z")
+        }
+    ]
+});
+
+db.anuncios.insert({
+    "_id": ObjectId("aef0faffaab986ddfec7ca98"),
+    "titulo": "Lorem",
+    "contenido": "Lorem",
+    "fechaPublicacion": ISODate("2016-04-08T15:06:21.595Z"),
+    "creadorId": ObjectId("ef5ddccfa37be48663d1db3a"),
+    "actividadId": ObjectId("65c1ffc12bcf66f26bafebf4")
+});
+
+db.espacios.insert({
+    "_id": ObjectId("0679e705dc38b5a6de501732"),
+    "nombre": "Lorem",
+    "tipo": "Lorem",
+    "capacidad": Int32(-955783345),
+    "ubicacion": "Lorem",
+    "disponible": true,
+    "recursos": [
+        {
+            "tipo": "Inmobiliario",
+            "nombre": "Lorem",
+            "cantidad": "Lorem"
+        }
+    ]
+});
+
+db.foros.insert({
+    "_id": ObjectId("4ee22b06bde4edead3844a78"),
+    "titulo": "Lorem",
+    "contenido": "Lorem",
+    "creadorId ": ObjectId("a84f66e4eea6be51d7b4edb7"),
+    "fechaPublicacion": ISODate("2016-04-08T15:06:21.595Z"),
+    "estado": "Abierto",
+    "actividadId": ObjectId("c70fc6fc0ddac801bdb8bc4b"),
+    "archivosAdjuntos": [
+        {
+            "nombre": "Lorem",
+            "tipo": "Lorem",
+            "URL": "Lorem",
+            "descripcion": "Lorem"
+        }
+    ]
+});
+
+db.comentarios.insert({
+    "_id": ObjectId("3a0a706119b5fbb8cab720e5"),
+    "foroId": ObjectId("97bf75dddb7aa409060ed845"),
+    "usuarioId": ObjectId("cddf5afafb8c8fcb3910cd6d"),
+    "contenido": "Lorem",
+    "fechaPublicacion": ISODate("2016-04-08T15:06:21.595Z"),
+    "archivosAdjuntos": [
+        {
+            "nombre": "Lorem",
+            "tipo": "Lorem",
+            "URL": "Lorem",
+            "descripcion": "Lorem"
+        }
+    ],
+    "replicasComentarios": [
+        {
+            "usuarioId": ObjectId("0d02e3bed4c806c3d04b0adf"),
+            "contenido": "Lorem",
+            "fechaPublicacion": ISODate("2016-04-08T15:06:21.595Z"),
+            "archivosAdjuntos": [
+                {
+                    "nombre": "Lorem",
+                    "tipo": "Lorem",
+                    "URL": "Lorem",
+                    "descripcion": "Lorem"
+                }
+            ]
+        }
+    ]
+});

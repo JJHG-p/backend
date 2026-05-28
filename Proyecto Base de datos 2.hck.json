@@ -1,0 +1,3182 @@
+{
+  "modelName": "New Model",
+  "collections": [
+    {
+      "collectionName": "usuarios",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "04a9c1b9-c392-48af-abab-511d3a5841b4",
+          "required": false,
+          "primaryKey": true,
+          "error": {},
+          "childRelationships": [
+            "36456a3a-9058-4fb7-b5b4-2872d226f629",
+            "06129b3a-8b61-408a-b865-23fb7c029c03",
+            "3a226a99-53ad-4470-804f-f1a38529ef47",
+            "c066c519-e471-467e-936c-b213b21d0c3a",
+            "6f11ae52-2a18-4dec-bccd-0b79e502d583",
+            "acdda004-95f9-471c-87bf-ef3c49df264f",
+            "272e7f5b-0931-4845-9c01-95d6be981267",
+            "40f19a1d-2c72-4ef8-b12b-20c6dfeb59e1",
+            "02c6d284-3db7-4766-bf65-d91a85ea39d9",
+            "c783df0c-16a2-42f1-9a68-462994122aa5",
+            "da674d7e-80c8-44ca-a9ec-1e9dc8884182",
+            "1b516765-a04f-4576-a07f-bb05ea5b6636",
+            "bd7277f3-de6b-4013-b9b1-e647e3a62237"
+          ]
+        },
+        {
+          "name": "nombre",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "6f52a773-4f91-435e-bf8c-e21093dd5b86",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "documentoId",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "4760d14d-0457-48aa-9470-be3401eee314",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "edad",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "GUID": "d5197f98-160d-4fe5-be1b-99af7eac257b",
+          "mode": "integer32",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "email",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "f16c858d-287f-44a3-a37d-1c7dfef16b38",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "telefono",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "7fac0279-b455-4679-84b1-08aa7483912c",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "residencia",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "c0be56c3-495d-4f30-ae8f-374a6c7ca2ea",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "rol",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "d74a7121-78cf-43be-af07-d925e91d45ca",
+          "enum": [
+            "Participante",
+            "Instructor",
+            "Coordinador",
+            "Administrador"
+          ],
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "fechaRegistro",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "GUID": "febfaf65-c4b8-4957-8806-9a7d130db539",
+          "required": false,
+          "error": {}
+        },
+        {
+          "name": "activo",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "boolean",
+          "GUID": "c65215ad-d67c-418a-a7a6-841f4e8e4268",
+          "error": {}
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "382d2be2-015b-461e-8a42-917ee94c0f10"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Moderate",
+      "validationAction": "Error",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "bucketId": "5fc3ea44-9172-4a0d-aca9-0e6a75ae8289",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "actividades",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "308b2f5d-0ee9-4558-92bd-4b0a45084e37",
+          "primaryKey": true,
+          "error": {},
+          "childRelationships": [
+            "2ba9436b-1dab-4f68-b80d-9317f8011ad5",
+            "070ce651-a43c-4854-9ea6-e09c5938d887",
+            "4b194916-3854-4a91-a935-614231c05eee",
+            "d5799304-75f8-4252-a541-b7f0000568cb"
+          ]
+        },
+        {
+          "name": "nombreActividad",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "93053e08-4e5f-4f3c-9b65-94c665f16efd",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "categoria",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "406054f8-36b1-4014-b120-776832d8b7ed",
+          "enum": [
+            "Arte",
+            "Deporte",
+            "Tecnologia",
+            "Salud",
+            "Emprendimiento",
+            "Desarrollo_Personal"
+          ],
+          "required": true,
+          "error": {
+            "enum": false,
+            "enums": false
+          }
+        },
+        {
+          "name": "descripcion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "c691cbfe-68ef-416f-8e62-b78f2d4326b6",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "objetivo",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "59c9e79f-e5d7-4545-9f88-704ad2db271e",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "fechaInicio",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "GUID": "90ccda04-24d5-4833-a7bc-8c08b72ac1b3",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "fechaFin",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "GUID": "d890bd08-56dd-4ee3-8d9c-db8c77aec031",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "intensidadHoraria",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "GUID": "c21b189b-4ca1-4609-9aa8-ea281b1bdb53",
+          "mode": "integer32",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "cupoMaximo",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "GUID": "464a7501-1165-494c-8d7c-75e7431f4330",
+          "mode": "integer32",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "estado",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "3842f8e9-ed8a-4ec1-bc31-2a08cb9cd38d",
+          "enum": [
+            "Programada",
+            "En_curso",
+            "Finalizada",
+            "Cancelada",
+            "Propuesta"
+          ],
+          "required": true,
+          "error": {
+            "enum": false,
+            "enums": false
+          }
+        },
+        {
+          "name": "recursos",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "nombre",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "032effe7-ab53-425c-8bbf-943b4c4197b3",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "tipo",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "16aa1144-a9aa-4535-8076-d02b94f286ba",
+                  "required": true,
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "6730d5ca-7c9b-492a-8a03-b7b297d85262",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "GUID": "897c0ed2-7f3e-4b32-8d81-33e661984398",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "propuestoPor",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "e901656b-e680-4625-a796-3413f99f7a62",
+          "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "foreignField": [
+            "7ffe5c83-0837-46e4-9bb1-274100c37877",
+            "04a9c1b9-c392-48af-abab-511d3a5841b4"
+          ],
+          "relationshipType": "Foreign Key",
+          "parentRelationship": "36456a3a-9058-4fb7-b5b4-2872d226f629",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "fechaAprobacion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "error": {},
+          "GUID": "a2eabc3d-3392-432b-93fa-59ea305362cf"
+        },
+        {
+          "name": "aprobadoPor",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "required": false,
+          "GUID": "93f3a82e-3019-4417-b300-f998de4dd7e8",
+          "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "foreignField": [
+            "7ffe5c83-0837-46e4-9bb1-274100c37877",
+            "04a9c1b9-c392-48af-abab-511d3a5841b4"
+          ],
+          "relationshipType": "Foreign Key",
+          "parentRelationship": "acdda004-95f9-471c-87bf-ef3c49df264f",
+          "error": {}
+        },
+        {
+          "name": "impartidoPor",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "cc58f763-3987-4b40-9bdb-57be87463da6",
+          "required": false,
+          "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "foreignField": [
+            "7ffe5c83-0837-46e4-9bb1-274100c37877",
+            "04a9c1b9-c392-48af-abab-511d3a5841b4"
+          ],
+          "relationshipType": "Foreign Key",
+          "parentRelationship": "272e7f5b-0931-4845-9c01-95d6be981267",
+          "error": {}
+        },
+        {
+          "name": "inscripciones",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "participanteId",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "objectId",
+                  "GUID": "b74c99b4-8d20-406e-84c4-c5f01d923b44",
+                  "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                  "foreignField": [
+                    "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                    "04a9c1b9-c392-48af-abab-511d3a5841b4"
+                  ],
+                  "relationshipType": "Foreign Key",
+                  "parentRelationship": "6f11ae52-2a18-4dec-bccd-0b79e502d583",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "nombreParticipante",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "5a172527-4c2e-46b6-b8f0-3e04727c6770",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "fecha",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "date",
+                  "primaryKey": false,
+                  "GUID": "f3b7e94c-2c49-4de1-8508-196131a9f777",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "estado",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "d68ca906-fc83-42f2-aecf-06f6ba528560",
+                  "enum": [
+                    "Inscrito",
+                    "Matriculado",
+                    "Retirado"
+                  ],
+                  "required": true,
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "ee3822d8-e420-40c8-a3a0-68ccd3c7580d",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "GUID": "cec108fe-932a-4516-9111-e137b8a4fe07",
+          "required": false,
+          "error": {}
+        },
+        {
+          "name": "evaluaciones",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "participanteId",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "objectId",
+                  "GUID": "ed158ff9-14a6-4fb4-8c7b-d3eb09a3a330",
+                  "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                  "foreignField": [
+                    "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                    "04a9c1b9-c392-48af-abab-511d3a5841b4"
+                  ],
+                  "relationshipType": "Foreign Key",
+                  "parentRelationship": "40f19a1d-2c72-4ef8-b12b-20c6dfeb59e1",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "nombre",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "3ab19987-0916-49e7-aa35-14ef4761fb7b",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "a6481b37-a770-4b96-b002-40716ec8770f",
+                  "name": "valoracionNumerica",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "observaciones",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "52ad5cbf-2d2d-4fdf-b847-fd0ea405b69a",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "sugerencias",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "5f9b77aa-c93d-4731-bb06-22a870ab8ed7",
+                  "required": true,
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "da96b894-badd-4fe9-832d-0c1d1b6635e2",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "required": false,
+          "GUID": "9fd6187d-2cb8-4045-9a29-a519c78d603f",
+          "error": {}
+        },
+        {
+          "name": "programaId",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "14d1ad4c-b24e-48f0-8416-bbae868a3ad7",
+          "foreignCollection": "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+          "foreignField": [
+            "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+            "f0314db0-9828-48f8-97a2-9cbe6af26a53"
+          ],
+          "relationshipType": "Foreign Key",
+          "parentRelationship": "bab1201a-ef13-456e-9dcd-9cb91aa3bcec",
+          "required": false,
+          "error": {}
+        },
+        {
+          "name": "seguimientos",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "participanteId",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "objectId",
+                  "GUID": "2abc18b2-b145-4820-8a60-a9f699f8c8f9",
+                  "required": true,
+                  "error": {},
+                  "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                  "foreignField": [
+                    "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                    "04a9c1b9-c392-48af-abab-511d3a5841b4"
+                  ],
+                  "relationshipType": "Foreign Key",
+                  "parentRelationship": "bd7277f3-de6b-4013-b9b1-e647e3a62237"
+                },
+                {
+                  "name": "comentarios",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "2d20e807-2758-41f4-b8c6-3a1cd2cf07d8",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "aspectosEvaluado",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "8c06858e-572d-4780-92ed-81761a0d8a44",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "nivelProgreso",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "a9533cc0-c4dd-4fe3-a2a8-b363c315c046",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "observaciones",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "25565b16-1533-4e1a-9689-47391e5ec2dc",
+                  "required": true,
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "58e4036c-c363-4c38-bb6f-8f23d3121b83",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "error": {},
+          "GUID": "01db0869-af61-4284-8746-8302659084a3"
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "30ea9600-a11e-4746-bc52-43319cdc7acc"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Moderate",
+      "validationAction": "Error",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+      "bucketId": "5fc3ea44-9172-4a0d-aca9-0e6a75ae8289",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "sesiones",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "error": {},
+          "primaryKey": true,
+          "GUID": "846c0c85-6f7c-4449-b375-5148c880ca2d",
+          "childRelationships": [
+            "5358479e-0336-444d-a748-f1cf3670a9f2"
+          ]
+        },
+        {
+          "name": "actividadId",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "69d67fc8-6289-4c5c-8832-910228ed4f5e",
+          "parentRelationship": "2ba9436b-1dab-4f68-b80d-9317f8011ad5",
+          "relationshipType": "Foreign Key",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "fecha",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "GUID": "91b827e9-9eb0-4280-af3e-5738cbcb8d44",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "horaInicio",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "error": {},
+          "required": true,
+          "GUID": "ffdc0e2b-68b0-482d-a096-4bdc37d24207"
+        },
+        {
+          "name": "horaFin",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "error": {},
+          "required": true,
+          "GUID": "6bba8938-dce0-42ff-b115-42f302aeba40"
+        },
+        {
+          "name": "modalidad",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "62a2c881-56f3-4f82-b7db-4e28e89aebfb",
+          "enum": [
+            "Presencial",
+            "Virtual",
+            "Hibrida"
+          ],
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "espacioId",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "required": false,
+          "GUID": "6260d951-9382-46a9-94bb-3ccde8acb8d4",
+          "foreignCollection": "826e2d3c-08e0-416e-b9fe-0e9ffb9c473f",
+          "foreignField": [
+            "826e2d3c-08e0-416e-b9fe-0e9ffb9c473f",
+            "12ca2316-58e7-4f1e-8c7a-26d2f7b7daef"
+          ],
+          "relationshipType": "Foreign Key",
+          "parentRelationship": "78bc3ec7-fbbf-49f1-ba32-31b8c26f02a7",
+          "error": {}
+        },
+        {
+          "name": "enlace",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "e7e23a71-db49-487a-baa4-bdedf60462fd",
+          "required": false,
+          "foreignCollection": "",
+          "foreignField": [],
+          "error": {}
+        },
+        {
+          "name": "asistencias",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "usuarioId",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "objectId",
+                  "GUID": "56621824-cb5f-4240-bf7b-f0940b6a3ded",
+                  "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                  "foreignField": [
+                    "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                    "04a9c1b9-c392-48af-abab-511d3a5841b4"
+                  ],
+                  "relationshipType": "Foreign Key",
+                  "parentRelationship": "06129b3a-8b61-408a-b865-23fb7c029c03",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "nombreUsuario",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "8ffa0fee-7428-4358-b6f2-ac2f5dbe0ab9",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "estado",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "boolean",
+                  "GUID": "67d97f99-e4d8-4289-9300-9bb362a0abdf",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "observacion",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "28a81dd8-4cda-4c96-828c-7a096960bfa4",
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "2b13efa1-506d-409a-b78b-df0aa4d9246e",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "GUID": "2fa4cf57-f5d3-4243-b0f7-6efa6b572b96",
+          "required": false,
+          "error": {}
+        },
+        {
+          "name": "archivosAdjuntos",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "nombre",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "99ca7b53-6019-486e-889c-a6101074ea71",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "tipo",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "41f5163d-9338-4ce7-8332-fedd38611e08",
+                  "enum": [
+                    "PDF",
+                    "Audiovisual",
+                    "Presentación",
+                    "Fotografía",
+                    "Acta"
+                  ],
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "URL",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "58d91ec4-5515-4846-9546-167f12eac745",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "descripcion",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "8e3c776d-5989-44d0-b16d-b8f505424dcb",
+                  "required": true,
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "4f6b934f-748b-4587-80ef-71296357e0a8",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "error": {},
+          "GUID": "e0132784-b75f-4e90-b91d-f07305d5a221"
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "1b473d21-a450-4989-b2ba-f5ac8b627bc1"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Moderate",
+      "validationAction": "Error",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "1ead5845-2b3c-486c-82a1-cfd24effcaa2",
+      "bucketId": "5fc3ea44-9172-4a0d-aca9-0e6a75ae8289",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "programas",
+      "type": "object",
+      "properties": [
+        {
+          "name": "tipo",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "7fe9de72-6498-42dc-b2e7-937dadb92dc1",
+          "enum": [
+            "Jornada_de_salud",
+            "Feria_de_emprendimiento",
+            "Semana_cultural",
+            "Ciclos_de_capacitación"
+          ],
+          "required": true,
+          "error": {
+            "enum": false,
+            "enums": false
+          }
+        },
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "f0314db0-9828-48f8-97a2-9cbe6af26a53",
+          "primaryKey": true,
+          "error": {},
+          "childRelationships": [
+            "bab1201a-ef13-456e-9dcd-9cb91aa3bcec"
+          ]
+        },
+        {
+          "name": "nombre",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "f2aed28e-30cf-4362-922a-734aa65d0a0e",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "descripcion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "dd3ba518-06c6-49c7-8712-4700da622756",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "fechaInicio",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "GUID": "ab4ab7b0-b730-4d97-b40e-d516b98a0196",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "fechaFin",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "error": {},
+          "GUID": "34f39f09-0852-41a6-a9ca-be4d8a1a98c4"
+        },
+        {
+          "name": "poblacionObjetivo",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "2a8c5d5a-5ce5-47bb-8a4d-4faea6c4f884",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "responsables",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "responsableId",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "objectId",
+                  "GUID": "151e5c64-3fa6-4f6d-a04b-5da12daf9906",
+                  "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                  "foreignField": [
+                    "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                    "04a9c1b9-c392-48af-abab-511d3a5841b4"
+                  ],
+                  "relationshipType": "Foreign Key",
+                  "parentRelationship": "3a226a99-53ad-4470-804f-f1a38529ef47",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "nombreResponsable",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "49c52b91-6ac1-4186-8935-2fa16ce74db4",
+                  "required": true,
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "763cae63-cd91-488f-8002-567cc64b7fa6",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "GUID": "59de3480-d1bb-49b2-86c0-fc511c91a3d3",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "actividades",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "actividadId",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "objectId",
+                  "GUID": "33395e19-d849-42b4-bb41-f2bebfd42686",
+                  "foreignCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+                  "foreignField": [
+                    "61320d2f-5358-41bf-918f-32f6ea61ba63",
+                    "308b2f5d-0ee9-4558-92bd-4b0a45084e37"
+                  ],
+                  "relationshipType": "Foreign Key",
+                  "parentRelationship": "070ce651-a43c-4854-9ea6-e09c5938d887",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "nombreActividad",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "7558e65e-af24-4775-b062-f5fa1efd96e2",
+                  "required": true,
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "15444b9c-4bea-478e-bdab-c26ff14ba44b",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "GUID": "304bb6f9-ccf6-4ead-b135-511c1723314c",
+          "required": false,
+          "error": {}
+        },
+        {
+          "name": "inscritos",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "participanteId",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "objectId",
+                  "GUID": "cb07fd07-2135-4b70-9d64-4d2a30ca10ab",
+                  "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                  "foreignField": [
+                    "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                    "04a9c1b9-c392-48af-abab-511d3a5841b4"
+                  ],
+                  "relationshipType": "Foreign Key",
+                  "parentRelationship": "c066c519-e471-467e-936c-b213b21d0c3a",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "nombreParticipante",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "41979f60-81dd-44bd-9c13-2e775730c133",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "fechaInscripcion",
+                  "type": "date",
+                  "isActivated": true,
+                  "GUID": "61c910cb-c88a-40b8-9051-5ffda8a21924",
+                  "hackoladeMeta": {},
+                  "default": "",
+                  "required": true,
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "6cc0420d-7d07-4928-9345-17197013036d",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "GUID": "354fe9e2-de89-476a-b51e-b2c4cca05b3d",
+          "required": false,
+          "error": {}
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "122ff4ae-6668-4fb6-bd4a-0bc33ce04cce"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Moderate",
+      "validationAction": "Error",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+      "bucketId": "5fc3ea44-9172-4a0d-aca9-0e6a75ae8289",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "anuncios",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "error": {},
+          "primaryKey": true,
+          "GUID": "86d91a63-a48f-4eae-a4d3-c173c1ea0437"
+        },
+        {
+          "name": "titulo",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "3aa0d5cc-d72f-497c-b4f8-a4bd92f2ddc0",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "contenido",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "f88a2aab-8006-42be-809e-e2a8bd468638",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "fechaPublicacion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "GUID": "cb1fadfb-a81b-4103-b838-c3d7bdaca8d1",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "creadorId ",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "f37fc4b2-2593-468f-b113-837ad1714388",
+          "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "required": true,
+          "error": {},
+          "foreignField": [
+            "7ffe5c83-0837-46e4-9bb1-274100c37877",
+            "04a9c1b9-c392-48af-abab-511d3a5841b4"
+          ],
+          "relationshipType": "Foreign Key",
+          "parentRelationship": "02c6d284-3db7-4766-bf65-d91a85ea39d9"
+        },
+        {
+          "name": "actividadId",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "48d65566-2fc9-4552-b1f6-c8e95fdb7821",
+          "foreignCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "required": true,
+          "error": {},
+          "foreignField": [
+            "61320d2f-5358-41bf-918f-32f6ea61ba63",
+            "308b2f5d-0ee9-4558-92bd-4b0a45084e37"
+          ],
+          "relationshipType": "Foreign Key",
+          "parentRelationship": "d5799304-75f8-4252-a541-b7f0000568cb"
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "82074473-6f11-4094-a288-5f80527edd0a"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Moderate",
+      "validationAction": "Error",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "5580ac3c-cc44-424c-9182-e6b6e3b54619",
+      "bucketId": "5fc3ea44-9172-4a0d-aca9-0e6a75ae8289",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "espacios",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "12ca2316-58e7-4f1e-8c7a-26d2f7b7daef",
+          "primaryKey": true,
+          "error": {},
+          "childRelationships": [
+            "78bc3ec7-fbbf-49f1-ba32-31b8c26f02a7"
+          ]
+        },
+        {
+          "name": "nombre",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "cf936ee6-5549-467f-abfa-db950244b8dd",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "tipo",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "1981abda-c2bb-4917-9a3e-c4203c54df0a",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "capacidad",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "numeric",
+          "GUID": "b1189460-45f4-417a-95cf-ac86e53fbb8c",
+          "mode": "integer32",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "ubicacion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "27986a12-35e1-4282-b33d-af2da90c5d04",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "disponible",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "boolean",
+          "GUID": "12f58bcf-f387-4125-ac8b-7a8c4bbae8a1",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "recursos",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "tipo",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "3e980ed2-7b3b-48a5-a8c5-8e34a9e27793",
+                  "enum": [
+                    "Inmobiliario",
+                    "Tecnologico"
+                  ],
+                  "required": true,
+                  "error": {
+                    "enum": false,
+                    "enums": false
+                  },
+                  "foreignCollection": "",
+                  "foreignField": []
+                },
+                {
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "d5ed8af3-d4aa-44e0-93ee-5a21eda15b0f",
+                  "name": "nombre",
+                  "required": true,
+                  "error": {},
+                  "foreignCollection": "",
+                  "foreignField": []
+                },
+                {
+                  "name": "cantidad",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "b23d3de2-b3ef-446b-a1b7-1813ee549132",
+                  "required": true,
+                  "error": {},
+                  "foreignCollection": "",
+                  "foreignField": []
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "6a090a9c-5558-4633-9d22-ef0e21b0a142",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "error": {},
+          "GUID": "b47f12fb-a113-43b2-8528-4c929074cda5"
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "06a04d34-e15d-4724-80ba-cf7755a31845"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Off",
+      "validationAction": "Warn",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "826e2d3c-08e0-416e-b9fe-0e9ffb9c473f",
+      "bucketId": "5fc3ea44-9172-4a0d-aca9-0e6a75ae8289",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "foros",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "primaryKey": true,
+          "GUID": "181dc7f9-8313-4b75-bac8-ce3a76b9a688",
+          "foreignCollection": "",
+          "foreignField": [],
+          "childRelationships": [
+            "6ab62e45-5235-4953-bcd3-f31d38cc87c4"
+          ],
+          "required": false,
+          "error": {}
+        },
+        {
+          "name": "titulo",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "e05318cb-ae9a-457d-827b-71a2a2b61c6c",
+          "required": true,
+          "error": {},
+          "foreignCollection": "",
+          "foreignField": []
+        },
+        {
+          "name": "contenido",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "de226986-0317-4d79-95c2-37ea474482f9",
+          "required": true,
+          "error": {},
+          "foreignCollection": "",
+          "foreignField": []
+        },
+        {
+          "name": "creadorId ",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "5764d050-efcd-4397-bed4-85c24dfaa0c2",
+          "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "required": true,
+          "error": {},
+          "foreignField": [
+            "7ffe5c83-0837-46e4-9bb1-274100c37877",
+            "04a9c1b9-c392-48af-abab-511d3a5841b4"
+          ],
+          "relationshipType": "Foreign Key",
+          "parentRelationship": "c783df0c-16a2-42f1-9a68-462994122aa5"
+        },
+        {
+          "name": "fechaPublicacion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "GUID": "54caa6cc-1153-42bd-99b9-2063b81f9c50",
+          "required": true,
+          "error": {},
+          "foreignCollection": "",
+          "foreignField": []
+        },
+        {
+          "name": "estado",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "5a4e1219-74ea-4286-9625-67a69d56d61b",
+          "enum": [
+            "Abierto",
+            "Cerrado",
+            "Oculto"
+          ],
+          "required": true,
+          "error": {
+            "enum": false,
+            "enums": false
+          }
+        },
+        {
+          "name": "actividadId",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "e232c888-d465-45c7-8820-3aed60f5ef7b",
+          "foreignCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "required": true,
+          "error": {},
+          "foreignField": [
+            "61320d2f-5358-41bf-918f-32f6ea61ba63",
+            "308b2f5d-0ee9-4558-92bd-4b0a45084e37"
+          ],
+          "relationshipType": "Foreign Key",
+          "parentRelationship": "4b194916-3854-4a91-a935-614231c05eee"
+        },
+        {
+          "name": "archivosAdjuntos",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "nombre",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "6fc28fbf-503b-432c-a796-b9c542a2bb45",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "tipo",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "be20b7b1-c8cf-48b2-a37b-f3d4b774cbf8",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "URL",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "e18b784a-50e6-4ee6-bee3-3835e519b925",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "descripcion",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "0239e86e-87b7-4d47-9f85-db99cb4d1bcb",
+                  "required": true,
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "ace31006-7ccb-44be-b7a3-ca54009803c3",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "error": {},
+          "GUID": "220deda6-a37a-46f4-8f44-f2eec859bae8"
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "912436d7-9a77-4646-91ce-4864a6946113"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Off",
+      "validationAction": "Warn",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "55d692cb-9e97-4c98-bfd1-de2c708d6e47",
+      "bucketId": "5fc3ea44-9172-4a0d-aca9-0e6a75ae8289",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "collectionName": "comentarios",
+      "type": "object",
+      "properties": [
+        {
+          "name": "_id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "054b0ef7-a3af-4f53-a97d-6a378181ce4e",
+          "primaryKey": true,
+          "error": {}
+        },
+        {
+          "name": "foroId",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "c00b73d9-6079-46e4-83ef-1f115f04c88c",
+          "foreignCollection": "55d692cb-9e97-4c98-bfd1-de2c708d6e47",
+          "foreignField": [
+            "55d692cb-9e97-4c98-bfd1-de2c708d6e47",
+            "181dc7f9-8313-4b75-bac8-ce3a76b9a688"
+          ],
+          "relationshipType": "Foreign Key",
+          "parentRelationship": "6ab62e45-5235-4953-bcd3-f31d38cc87c4",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "usuarioId",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "objectId",
+          "GUID": "47add81b-30af-4e57-868b-c9a9bfd77828",
+          "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "foreignField": [
+            "7ffe5c83-0837-46e4-9bb1-274100c37877",
+            "04a9c1b9-c392-48af-abab-511d3a5841b4"
+          ],
+          "relationshipType": "Foreign Key",
+          "parentRelationship": "da674d7e-80c8-44ca-a9ec-1e9dc8884182",
+          "required": true,
+          "error": {}
+        },
+        {
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "string",
+          "GUID": "47bc6c9e-0dda-43a4-a276-dac2753bbea8",
+          "name": "contenido",
+          "required": true,
+          "error": {}
+        },
+        {
+          "name": "fechaPublicacion",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "date",
+          "primaryKey": false,
+          "error": {},
+          "required": true,
+          "GUID": "26a4265a-a1a4-48bc-882a-81fcc0fc72da"
+        },
+        {
+          "name": "archivosAdjuntos",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "nombre",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "b95f2d47-5d14-419a-9946-cede60c6acff",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "tipo",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "ba213214-1cf6-4fc1-9022-79aef1624bd0",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "URL",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "27f4b6d1-416f-40a8-84c4-082b643e2bc5",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "descripcion",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "1ee9070b-7192-4e46-bbbd-d43d336b6d92",
+                  "required": true,
+                  "error": {}
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "dbeb45d9-8f04-4389-bb26-0856c24a1802",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "error": {},
+          "GUID": "15481c03-550d-4fcd-9185-afc623baa4de",
+          "foreignCollection": "",
+          "foreignField": []
+        },
+        {
+          "name": "replicasComentarios",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "type": "array",
+          "properties": [
+            {
+              "hackoladeMeta": {},
+              "isActivated": true,
+              "type": "document",
+              "properties": [
+                {
+                  "name": "usuarioId",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "objectId",
+                  "GUID": "61be1d97-83a8-423d-9d77-168e8b247b24",
+                  "foreignCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                  "foreignField": [
+                    "7ffe5c83-0837-46e4-9bb1-274100c37877",
+                    "04a9c1b9-c392-48af-abab-511d3a5841b4"
+                  ],
+                  "relationshipType": "Foreign Key",
+                  "parentRelationship": "1b516765-a04f-4576-a07f-bb05ea5b6636",
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "string",
+                  "GUID": "c36d5912-4658-4bc9-b367-3eabcfd9b54f",
+                  "name": "contenido",
+                  "foreignCollection": "",
+                  "foreignField": [],
+                  "required": true,
+                  "error": {}
+                },
+                {
+                  "name": "fechaPublicacion",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "date",
+                  "primaryKey": false,
+                  "error": {},
+                  "required": true,
+                  "GUID": "ec01558d-06f9-47f5-90b0-75bddf51d05d"
+                },
+                {
+                  "name": "archivosAdjuntos",
+                  "hackoladeMeta": {},
+                  "isActivated": true,
+                  "type": "array",
+                  "properties": [
+                    {
+                      "hackoladeMeta": {},
+                      "isActivated": true,
+                      "type": "document",
+                      "properties": [
+                        {
+                          "name": "nombre",
+                          "hackoladeMeta": {},
+                          "isActivated": true,
+                          "type": "string",
+                          "GUID": "cf6cbefe-abbc-465a-a594-de171fd3b61a",
+                          "required": true,
+                          "error": {}
+                        },
+                        {
+                          "name": "tipo",
+                          "hackoladeMeta": {},
+                          "isActivated": true,
+                          "type": "string",
+                          "GUID": "c3ab5488-a8f1-4d52-9b6a-0898e451bae6",
+                          "required": true,
+                          "error": {}
+                        },
+                        {
+                          "name": "URL",
+                          "hackoladeMeta": {},
+                          "isActivated": true,
+                          "type": "string",
+                          "GUID": "de29e610-a096-4700-b2a3-1f57caac608d",
+                          "required": true,
+                          "error": {}
+                        },
+                        {
+                          "name": "descripcion",
+                          "hackoladeMeta": {},
+                          "isActivated": true,
+                          "type": "string",
+                          "GUID": "60892569-f601-4b28-a5dc-4e0545455283",
+                          "required": true,
+                          "error": {}
+                        }
+                      ],
+                      "additionalProperties": false,
+                      "error": {},
+                      "GUID": "990a2266-2297-43e7-bcfe-5a2ccb7bea02",
+                      "arrayItem": true
+                    }
+                  ],
+                  "additionalItems": true,
+                  "error": {},
+                  "GUID": "071d5275-d680-4a15-97ae-c745b66f434d",
+                  "foreignCollection": "",
+                  "foreignField": []
+                }
+              ],
+              "additionalProperties": false,
+              "error": {},
+              "GUID": "603b0e10-aaf9-4341-a715-c22c5f212c70",
+              "arrayItem": true
+            }
+          ],
+          "additionalItems": true,
+          "error": {},
+          "GUID": "85275ca8-c143-48a2-af89-e18af46f1625"
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "05c72d0b-94aa-4f94-acde-ce286d999adb"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "validationLevel": "Off",
+      "validationAction": "Warn",
+      "storageEngineName": "WiredTiger",
+      "sharding": {
+        "unique": true,
+        "collation": "null"
+      },
+      "GUID": "6e5d5364-b49b-482a-bc92-8f7cd273d9b1",
+      "bucketId": "5fc3ea44-9172-4a0d-aca9-0e6a75ae8289",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    }
+  ],
+  "buckets": [
+    {
+      "name": "centroComunitario",
+      "type": "bucket",
+      "collectionIds": [
+        "7ffe5c83-0837-46e4-9bb1-274100c37877",
+        "61320d2f-5358-41bf-918f-32f6ea61ba63",
+        "1ead5845-2b3c-486c-82a1-cfd24effcaa2",
+        "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+        "5580ac3c-cc44-424c-9182-e6b6e3b54619",
+        "826e2d3c-08e0-416e-b9fe-0e9ffb9c473f",
+        "55d692cb-9e97-4c98-bfd1-de2c708d6e47",
+        "6e5d5364-b49b-482a-bc92-8f7cd273d9b1"
+      ],
+      "backgroundColor": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 1
+      },
+      "show": true,
+      "isActivated": true,
+      "GUID": "5fc3ea44-9172-4a0d-aca9-0e6a75ae8289",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    }
+  ],
+  "views": [],
+  "relationships": [
+    {
+      "name": "fk_usuarios.nombre_to_actividades.propuesto",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "e901656b-e680-4625-a796-3413f99f7a62"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "1..n",
+      "GUID": "36456a3a-9058-4fb7-b5b4-2872d226f629",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+      "hackoladeStyles": {
+        "GUID": "13788aeb-66bc-484c-9f70-cd5bbcc7edc8",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10520.173160173126,
+            "y": 27660.327904112517
+          },
+          {
+            "y": 27660.327904112517,
+            "x": 10204.3082251082
+          },
+          {
+            "x": 10204.3082251082,
+            "y": 27613.36972022118
+          }
+        ],
+        "sides": [
+          "left",
+          "bottom"
+        ]
+      },
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "name": "fk_actividades._id_to_sesiones.actividadID",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "308b2f5d-0ee9-4558-92bd-4b0a45084e37"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "1ead5845-2b3c-486c-82a1-cfd24effcaa2",
+          "69d67fc8-6289-4c5c-8832-910228ed4f5e"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "1..n",
+      "GUID": "2ba9436b-1dab-4f68-b80d-9317f8011ad5",
+      "parentCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+      "childCollection": "1ead5845-2b3c-486c-82a1-cfd24effcaa2",
+      "hackoladeStyles": {
+        "GUID": "9e9a3099-7b1a-4d5c-908a-5c565419f924",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10299.11722597062,
+            "y": 27789.473519270578
+          },
+          {
+            "x": 10520.173160173126,
+            "y": 27789.473519270578
+          }
+        ],
+        "sides": [
+          "right",
+          "left"
+        ]
+      },
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "name": "fk_usuarios._id_to_sesiones.asistentesReales.[0].asistenteID",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "1ead5845-2b3c-486c-82a1-cfd24effcaa2",
+          "2fa4cf57-f5d3-4243-b0f7-6efa6b572b96",
+          "2b13efa1-506d-409a-b78b-df0aa4d9246e",
+          "56621824-cb5f-4240-bf7b-f0940b6a3ded"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "0..n",
+      "GUID": "06129b3a-8b61-408a-b865-23fb7c029c03",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "1ead5845-2b3c-486c-82a1-cfd24effcaa2",
+      "hackoladeStyles": {
+        "GUID": "860063d7-940b-4d46-b6fd-94516f81d533",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10078.64103549443,
+            "y": 27733.492966107777
+          },
+          {
+            "x": 10078.64103549443,
+            "y": 27613.36972022118
+          }
+        ],
+        "sides": [
+          "top",
+          "bottom"
+        ]
+      },
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "name": "fk_usuarios._id_to_programas.responsables.[0].responsableID",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+          "59de3480-d1bb-49b2-86c0-fc511c91a3d3",
+          "763cae63-cd91-488f-8002-567cc64b7fa6",
+          "151e5c64-3fa6-4f6d-a04b-5da12daf9906"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "1..n",
+      "GUID": "3a226a99-53ad-4470-804f-f1a38529ef47",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+      "hackoladeStyles": {
+        "GUID": "e7231e7a-3c1a-44f1-b6f5-f06642a1a95a",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10539.55714285714,
+            "y": 27112.625504651536
+          },
+          {
+            "x": 10416.054112554119,
+            "y": 27112.625504651536
+          },
+          {
+            "x": 10416.054112554119,
+            "y": 27433.36972022118
+          },
+          {
+            "x": 10254.736796536774,
+            "y": 27433.36972022118
+          }
+        ],
+        "sides": [
+          "left",
+          "right"
+        ]
+      },
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "name": "fk_actividades._id_to_programas.actividadesAsociadas.[0].actividadID",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "308b2f5d-0ee9-4558-92bd-4b0a45084e37"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+          "304bb6f9-ccf6-4ead-b135-511c1723314c",
+          "15444b9c-4bea-478e-bdab-c26ff14ba44b",
+          "33395e19-d849-42b4-bb41-f2bebfd42686"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "1..n",
+      "GUID": "070ce651-a43c-4854-9ea6-e09c5938d887",
+      "parentCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+      "childCollection": "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+      "hackoladeStyles": {
+        "GUID": "a5162692-b8da-4928-9d23-99263384ac69",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10694.12857142857,
+            "y": 27367.905152529765
+          },
+          {
+            "x": 10694.12857142857,
+            "y": 27432.903053554513
+          }
+        ],
+        "sides": [
+          "bottom",
+          "top"
+        ]
+      },
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "name": "fk_usuarios._id_to_programas.inscritos.[0].participanteID",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+          "354fe9e2-de89-476a-b51e-b2c4cca05b3d",
+          "6cc0420d-7d07-4928-9345-17197013036d",
+          "cb07fd07-2135-4b70-9d64-4d2a30ca10ab"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "0..n",
+      "GUID": "c066c519-e471-467e-936c-b213b21d0c3a",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+      "hackoladeStyles": {
+        "GUID": "7b948efe-413b-4ad7-aa6d-33e608506bf0",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10539.55714285714,
+            "y": 27240.260142487594
+          },
+          {
+            "x": 10486.682683982674,
+            "y": 27240.260142487594
+          },
+          {
+            "x": 10486.682683982674,
+            "y": 27463.36972022118
+          },
+          {
+            "x": 10254.736796536774,
+            "y": 27463.36972022118
+          }
+        ],
+        "sides": [
+          "left",
+          "right"
+        ]
+      },
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "name": "fk_usuarios._id_to_actividades.participantesInscritos.[0].participanteID",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "cec108fe-932a-4516-9111-e137b8a4fe07",
+          "ee3822d8-e420-40c8-a3a0-68ccd3c7580d",
+          "b74c99b4-8d20-406e-84c4-c5f01d923b44"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "0..n",
+      "GUID": "6f11ae52-2a18-4dec-bccd-0b79e502d583",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+      "hackoladeStyles": {
+        "GUID": "ea896326-ad4e-47a7-a013-73a91d10fc73",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10520.173160173126,
+            "y": 27714.205405433466
+          },
+          {
+            "y": 27714.205405433466,
+            "x": 10167.165367965335
+          },
+          {
+            "x": 10167.165367965335,
+            "y": 27613.36972022118
+          }
+        ],
+        "sides": [
+          "left",
+          "bottom"
+        ]
+      },
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "name": "fk_usuarios._id_to_actividades.aprobadoPor",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "93f3a82e-3019-4417-b300-f998de4dd7e8"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "1..n",
+      "GUID": "acdda004-95f9-471c-87bf-ef3c49df264f",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+      "hackoladeStyles": {
+        "GUID": "2ef6e2ce-456c-4994-b2d1-a2bacc22acc9",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10520.173160173126,
+            "y": 27557.202697507062
+          },
+          {
+            "x": 10254.736796536774,
+            "y": 27557.202697507062
+          }
+        ],
+        "sides": [
+          "left",
+          "right"
+        ]
+      },
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "name": "fk_usuarios._id_to_actividades.impartidoPor",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "cc58f763-3987-4b40-9bdb-57be87463da6"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "1..n",
+      "GUID": "272e7f5b-0931-4845-9c01-95d6be981267",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+      "hackoladeStyles": {
+        "GUID": "c90d3de6-90d7-4491-b7b0-9506fdfad588",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10520.173160173126,
+            "y": 27598.462918388755
+          },
+          {
+            "x": 10254.736796536774,
+            "y": 27598.462918388755
+          }
+        ],
+        "sides": [
+          "left",
+          "right"
+        ]
+      },
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "name": "fk_programas._id_to_actividades.programaId",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+          "f0314db0-9828-48f8-97a2-9cbe6af26a53"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "14d1ad4c-b24e-48f0-8416-bbae868a3ad7"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "1..n",
+      "GUID": "bab1201a-ef13-456e-9dcd-9cb91aa3bcec",
+      "parentCollection": "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+      "childCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+      "hackoladeStyles": {
+        "GUID": "40230137-60e1-4c03-b2c3-32fbba4d563d",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10744.401731601698,
+            "y": 27432.903053554513
+          },
+          {
+            "x": 10744.401731601698,
+            "y": 27367.905152529765
+          }
+        ],
+        "sides": [
+          "top",
+          "bottom"
+        ]
+      },
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "name": "fk_usuarios._id_to_actividades.evaluaciones.[0].participanteId",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "9fd6187d-2cb8-4045-9a29-a519c78d603f",
+          "da96b894-badd-4fe9-832d-0c1d1b6635e2",
+          "ed158ff9-14a6-4fb4-8c7b-d3eb09a3a330"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "1..n",
+      "GUID": "40f19a1d-2c72-4ef8-b12b-20c6dfeb59e1",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+      "hackoladeStyles": {
+        "GUID": "0be1a730-20d2-4625-9e88-833338434f25",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10520.173160173126,
+            "y": 27523.601675177873
+          },
+          {
+            "x": 10254.736796536774,
+            "y": 27523.601675177873
+          }
+        ],
+        "sides": [
+          "left",
+          "right"
+        ]
+      },
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "name": "fk_espacios._id_to_sesiones.espacioId",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "826e2d3c-08e0-416e-b9fe-0e9ffb9c473f",
+          "12ca2316-58e7-4f1e-8c7a-26d2f7b7daef"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "1ead5845-2b3c-486c-82a1-cfd24effcaa2",
+          "6260d951-9382-46a9-94bb-3ccde8acb8d4"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "1..n",
+      "GUID": "78bc3ec7-fbbf-49f1-ba32-31b8c26f02a7",
+      "parentCollection": "826e2d3c-08e0-416e-b9fe-0e9ffb9c473f",
+      "childCollection": "1ead5845-2b3c-486c-82a1-cfd24effcaa2",
+      "hackoladeStyles": {
+        "GUID": "fe374aae-8589-4f62-b1b7-492a144b635c",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 9969.260083113477,
+            "y": 27948.88081335184
+          },
+          {
+            "x": 9843.86666666667,
+            "y": 27948.88081335184
+          }
+        ],
+        "sides": [
+          "left",
+          "right"
+        ]
+      },
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    },
+    {
+      "name": "fk_usuarios._id_to_anuncios.creadorId ",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "5580ac3c-cc44-424c-9182-e6b6e3b54619",
+          "f37fc4b2-2593-468f-b113-837ad1714388"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "0..n",
+      "GUID": "02c6d284-3db7-4766-bf65-d91a85ea39d9",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "5580ac3c-cc44-424c-9182-e6b6e3b54619",
+      "hackoladeStyles": {
+        "GUID": "75d2b6f4-4ca8-4fc5-b932-d57eae8bc368",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10138.290215773815,
+            "y": 27164.38995535717
+          },
+          {
+            "x": 10138.290215773815,
+            "y": 27403.36972022118
+          }
+        ],
+        "sides": [
+          "bottom",
+          "top"
+        ]
+      }
+    },
+    {
+      "name": "fk_usuarios._id_to_foros.creadorId ",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "55d692cb-9e97-4c98-bfd1-de2c708d6e47",
+          "5764d050-efcd-4397-bed4-85c24dfaa0c2"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "0..n",
+      "GUID": "c783df0c-16a2-42f1-9a68-462994122aa5",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "55d692cb-9e97-4c98-bfd1-de2c708d6e47",
+      "hackoladeStyles": {
+        "GUID": "f7f5fbc5-9abf-460b-8d7d-2808526cddc2",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 9832.366666666681,
+            "y": 27240.53333333336
+          },
+          {
+            "x": 10046.718398268426,
+            "y": 27240.53333333336
+          },
+          {
+            "x": 10046.718398268426,
+            "y": 27403.36972022118
+          }
+        ],
+        "sides": [
+          "right",
+          "top"
+        ]
+      }
+    },
+    {
+      "name": "fk_foros._id_to_comentarios.foroId",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "55d692cb-9e97-4c98-bfd1-de2c708d6e47",
+          "181dc7f9-8313-4b75-bac8-ce3a76b9a688"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "6e5d5364-b49b-482a-bc92-8f7cd273d9b1",
+          "c00b73d9-6079-46e4-83ef-1f115f04c88c"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "0..n",
+      "GUID": "6ab62e45-5235-4953-bcd3-f31d38cc87c4",
+      "parentCollection": "55d692cb-9e97-4c98-bfd1-de2c708d6e47",
+      "childCollection": "6e5d5364-b49b-482a-bc92-8f7cd273d9b1",
+      "hackoladeStyles": {
+        "GUID": "7aeca43b-387c-47e1-b085-6185c25db462",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 9702.89429312582,
+            "y": 27392.533333333362
+          },
+          {
+            "x": 9702.89429312582,
+            "y": 27260.866666666687
+          }
+        ],
+        "sides": [
+          "top",
+          "bottom"
+        ]
+      }
+    },
+    {
+      "name": "fk_usuarios._id_to_comentarios.usuarioId",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "6e5d5364-b49b-482a-bc92-8f7cd273d9b1",
+          "47add81b-30af-4e57-868b-c9a9bfd77828"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "0..n",
+      "GUID": "da674d7e-80c8-44ca-a9ec-1e9dc8884182",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "6e5d5364-b49b-482a-bc92-8f7cd273d9b1",
+      "hackoladeStyles": {
+        "GUID": "17934e9c-b3e9-488b-832c-f46278265b28",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 9850.40000000001,
+            "y": 27600.400000000034
+          },
+          {
+            "x": 10021.736796536774,
+            "y": 27600.400000000034
+          }
+        ],
+        "sides": [
+          "right",
+          "left"
+        ]
+      }
+    },
+    {
+      "name": "fk_usuarios._id_to_comentarios.replicasComentarios.[0].usuarioId",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "6e5d5364-b49b-482a-bc92-8f7cd273d9b1",
+          "85275ca8-c143-48a2-af89-e18af46f1625",
+          "603b0e10-aaf9-4341-a715-c22c5f212c70",
+          "61be1d97-83a8-423d-9d77-168e8b247b24"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "0..n",
+      "GUID": "1b516765-a04f-4576-a07f-bb05ea5b6636",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "6e5d5364-b49b-482a-bc92-8f7cd273d9b1",
+      "hackoladeStyles": {
+        "GUID": "5fc7c1a6-a375-4f09-96b0-61256d553957",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 9850.40000000001,
+            "y": 27537.133333333364
+          },
+          {
+            "x": 10021.736796536774,
+            "y": 27537.133333333364
+          }
+        ],
+        "sides": [
+          "right",
+          "left"
+        ]
+      }
+    },
+    {
+      "name": "fk_actividades._id_to_foros.actividadId",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "308b2f5d-0ee9-4558-92bd-4b0a45084e37"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "55d692cb-9e97-4c98-bfd1-de2c708d6e47",
+          "e232c888-d465-45c7-8820-3aed60f5ef7b"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "0..n",
+      "GUID": "4b194916-3854-4a91-a935-614231c05eee",
+      "parentCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+      "childCollection": "55d692cb-9e97-4c98-bfd1-de2c708d6e47",
+      "hackoladeStyles": {
+        "GUID": "91b78d15-b186-4437-9d5a-e6a2ad41c02e",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 9832.366666666681,
+            "y": 27209.200000000004
+          },
+          {
+            "x": 10296.269913419907,
+            "y": 27209.200000000004
+          },
+          {
+            "y": 27393.903053554524,
+            "x": 10296.269913419907
+          },
+          {
+            "y": 27393.903053554524,
+            "x": 10532.506493506466
+          },
+          {
+            "x": 10532.506493506466,
+            "y": 27432.903053554513
+          }
+        ],
+        "sides": [
+          "right",
+          "top"
+        ]
+      }
+    },
+    {
+      "name": "fk_actividades._id_to_anuncios.actividadId",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "308b2f5d-0ee9-4558-92bd-4b0a45084e37"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "5580ac3c-cc44-424c-9182-e6b6e3b54619",
+          "48d65566-2fc9-4552-b1f6-c8e95fdb7821"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "0..n",
+      "GUID": "d5799304-75f8-4252-a541-b7f0000568cb",
+      "parentCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+      "childCollection": "5580ac3c-cc44-424c-9182-e6b6e3b54619",
+      "hackoladeStyles": {
+        "GUID": "2ad12359-4ca0-48f6-a034-548ee03d3cbe",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10275.023549107147,
+            "y": 27084.58995535717
+          },
+          {
+            "x": 10397.598354640137,
+            "y": 27084.58995535717
+          },
+          {
+            "x": 10397.598354640137,
+            "y": 27691.692076775144
+          },
+          {
+            "x": 10520.173160173126,
+            "y": 27691.692076775144
+          }
+        ],
+        "sides": [
+          "right",
+          "left"
+        ]
+      }
+    },
+    {
+      "name": "fk_usuarios._id_to_actividades.seguimientos.[0].participanteId",
+      "relationshipType": "Foreign Key",
+      "parentField": [
+        [
+          "7ffe5c83-0837-46e4-9bb1-274100c37877",
+          "04a9c1b9-c392-48af-abab-511d3a5841b4"
+        ]
+      ],
+      "parentCardinality": "1",
+      "childField": [
+        [
+          "61320d2f-5358-41bf-918f-32f6ea61ba63",
+          "01db0869-af61-4284-8746-8302659084a3",
+          "58e4036c-c363-4c38-bb6f-8f23d3121b83",
+          "2abc18b2-b145-4820-8a60-a9f699f8c8f9"
+        ]
+      ],
+      "isActivated": true,
+      "childCardinality": "1..n",
+      "GUID": "bd7277f3-de6b-4013-b9b1-e647e3a62237",
+      "parentCollection": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+      "childCollection": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+      "hackoladeStyles": {
+        "GUID": "b5e0e065-59ff-4951-a587-af72538caf49",
+        "autoPositioning": false,
+        "type": "Orthogonal",
+        "thickness": 2,
+        "color": "#79c4ff",
+        "dataType": "",
+        "shape": [
+          {
+            "x": 10520.173160173126,
+            "y": 27826.155708133418
+          },
+          {
+            "x": 10366.45497835495,
+            "y": 27826.155708133418
+          },
+          {
+            "x": 10366.45497835495,
+            "y": 27491.36972022118
+          },
+          {
+            "x": 10254.736796536774,
+            "y": 27491.36972022118
+          }
+        ],
+        "sides": [
+          "left",
+          "right"
+        ]
+      }
+    }
+  ],
+  "users": [],
+  "diagramViews": [],
+  "idToNameHashTable": {
+    "5fc3ea44-9172-4a0d-aca9-0e6a75ae8289": "centroComunitario",
+    "7ffe5c83-0837-46e4-9bb1-274100c37877": "usuarios",
+    "04a9c1b9-c392-48af-abab-511d3a5841b4": "_id",
+    "6f52a773-4f91-435e-bf8c-e21093dd5b86": "nombre",
+    "4760d14d-0457-48aa-9470-be3401eee314": "documentoId",
+    "61320d2f-5358-41bf-918f-32f6ea61ba63": "actividades",
+    "308b2f5d-0ee9-4558-92bd-4b0a45084e37": "_id",
+    "93053e08-4e5f-4f3c-9b65-94c665f16efd": "nombreActividad",
+    "406054f8-36b1-4014-b120-776832d8b7ed": "categoria",
+    "d5197f98-160d-4fe5-be1b-99af7eac257b": "edad",
+    "f16c858d-287f-44a3-a37d-1c7dfef16b38": "email",
+    "7fac0279-b455-4679-84b1-08aa7483912c": "telefono",
+    "c0be56c3-495d-4f30-ae8f-374a6c7ca2ea": "residencia",
+    "d74a7121-78cf-43be-af07-d925e91d45ca": "rol",
+    "febfaf65-c4b8-4957-8806-9a7d130db539": "fechaRegistro",
+    "c65215ad-d67c-418a-a7a6-841f4e8e4268": "activo",
+    "c691cbfe-68ef-416f-8e62-b78f2d4326b6": "descripcion",
+    "59c9e79f-e5d7-4545-9f88-704ad2db271e": "objetivo",
+    "90ccda04-24d5-4833-a7bc-8c08b72ac1b3": "fechaInicio",
+    "d890bd08-56dd-4ee3-8d9c-db8c77aec031": "fechaFin",
+    "c21b189b-4ca1-4609-9aa8-ea281b1bdb53": "intensidadHoraria",
+    "464a7501-1165-494c-8d7c-75e7431f4330": "cupoMaximo",
+    "3842f8e9-ed8a-4ec1-bc31-2a08cb9cd38d": "estado",
+    "897c0ed2-7f3e-4b32-8d81-33e661984398": "recursos",
+    "e901656b-e680-4625-a796-3413f99f7a62": "propuestoPor",
+    "36456a3a-9058-4fb7-b5b4-2872d226f629": "fk_usuarios.nombre_to_actividades.propuesto",
+    "93f3a82e-3019-4417-b300-f998de4dd7e8": "aprobadoPor",
+    "cec108fe-932a-4516-9111-e137b8a4fe07": "inscripciones",
+    "9fd6187d-2cb8-4045-9a29-a519c78d603f": "evaluaciones",
+    "1ead5845-2b3c-486c-82a1-cfd24effcaa2": "sesiones",
+    "846c0c85-6f7c-4449-b375-5148c880ca2d": "_id",
+    "69d67fc8-6289-4c5c-8832-910228ed4f5e": "actividadId",
+    "91b827e9-9eb0-4280-af3e-5738cbcb8d44": "fecha",
+    "2ba9436b-1dab-4f68-b80d-9317f8011ad5": "fk_actividades._id_to_sesiones.actividadID",
+    "ffdc0e2b-68b0-482d-a096-4bdc37d24207": "horaInicio",
+    "6bba8938-dce0-42ff-b115-42f302aeba40": "horaFin",
+    "62a2c881-56f3-4f82-b7db-4e28e89aebfb": "modalidad",
+    "6260d951-9382-46a9-94bb-3ccde8acb8d4": "espacioId",
+    "2fa4cf57-f5d3-4243-b0f7-6efa6b572b96": "asistencias",
+    "e0132784-b75f-4e90-b91d-f07305d5a221": "archivosAdjuntos",
+    "99ca7b53-6019-486e-889c-a6101074ea71": "nombre",
+    "41f5163d-9338-4ce7-8332-fedd38611e08": "tipo",
+    "58d91ec4-5515-4846-9546-167f12eac745": "URL",
+    "56621824-cb5f-4240-bf7b-f0940b6a3ded": "usuarioId",
+    "8ffa0fee-7428-4358-b6f2-ac2f5dbe0ab9": "nombreUsuario",
+    "06129b3a-8b61-408a-b865-23fb7c029c03": "fk_usuarios._id_to_sesiones.asistentesReales.[0].asistenteID",
+    "23bf32cb-031c-4a38-9d7f-acdaedd667bd": "programas",
+    "f0314db0-9828-48f8-97a2-9cbe6af26a53": "_id",
+    "f2aed28e-30cf-4362-922a-734aa65d0a0e": "nombre",
+    "dd3ba518-06c6-49c7-8712-4700da622756": "descripcion",
+    "ab4ab7b0-b730-4d97-b40e-d516b98a0196": "fechaInicio",
+    "34f39f09-0852-41a6-a9ca-be4d8a1a98c4": "fechaFin",
+    "2a8c5d5a-5ce5-47bb-8a4d-4faea6c4f884": "poblacionObjetivo",
+    "59de3480-d1bb-49b2-86c0-fc511c91a3d3": "responsables",
+    "304bb6f9-ccf6-4ead-b135-511c1723314c": "actividades",
+    "354fe9e2-de89-476a-b51e-b2c4cca05b3d": "inscritos",
+    "151e5c64-3fa6-4f6d-a04b-5da12daf9906": "responsableId",
+    "49c52b91-6ac1-4186-8935-2fa16ce74db4": "nombreResponsable",
+    "3a226a99-53ad-4470-804f-f1a38529ef47": "fk_usuarios._id_to_programas.responsables.[0].responsableID",
+    "33395e19-d849-42b4-bb41-f2bebfd42686": "actividadId",
+    "7558e65e-af24-4775-b062-f5fa1efd96e2": "nombreActividad",
+    "070ce651-a43c-4854-9ea6-e09c5938d887": "fk_actividades._id_to_programas.actividadesAsociadas.[0].actividadID",
+    "cb07fd07-2135-4b70-9d64-4d2a30ca10ab": "participanteId",
+    "41979f60-81dd-44bd-9c13-2e775730c133": "nombreParticipante",
+    "c066c519-e471-467e-936c-b213b21d0c3a": "fk_usuarios._id_to_programas.inscritos.[0].participanteID",
+    "5580ac3c-cc44-424c-9182-e6b6e3b54619": "anuncios",
+    "86d91a63-a48f-4eae-a4d3-c173c1ea0437": "_id",
+    "3aa0d5cc-d72f-497c-b4f8-a4bd92f2ddc0": "titulo",
+    "f37fc4b2-2593-468f-b113-837ad1714388": "creadorId ",
+    "b74c99b4-8d20-406e-84c4-c5f01d923b44": "participanteId",
+    "5a172527-4c2e-46b6-b8f0-3e04727c6770": "nombreParticipante",
+    "6f11ae52-2a18-4dec-bccd-0b79e502d583": "fk_usuarios._id_to_actividades.participantesInscritos.[0].participanteID",
+    "7fe9de72-6498-42dc-b2e7-937dadb92dc1": "tipo",
+    "f88a2aab-8006-42be-809e-e2a8bd468638": "contenido",
+    "acdda004-95f9-471c-87bf-ef3c49df264f": "fk_usuarios._id_to_actividades.aprobadoPor",
+    "cc58f763-3987-4b40-9bdb-57be87463da6": "impartidoPor",
+    "272e7f5b-0931-4845-9c01-95d6be981267": "fk_usuarios._id_to_actividades.impartidoPor",
+    "f3b7e94c-2c49-4de1-8508-196131a9f777": "fecha",
+    "d68ca906-fc83-42f2-aecf-06f6ba528560": "estado",
+    "ed158ff9-14a6-4fb4-8c7b-d3eb09a3a330": "participanteId",
+    "a6481b37-a770-4b96-b002-40716ec8770f": "valoracionNumerica",
+    "52ad5cbf-2d2d-4fdf-b847-fd0ea405b69a": "observaciones",
+    "5f9b77aa-c93d-4731-bb06-22a870ab8ed7": "sugerencias",
+    "14d1ad4c-b24e-48f0-8416-bbae868a3ad7": "programaId",
+    "bab1201a-ef13-456e-9dcd-9cb91aa3bcec": "fk_programas._id_to_actividades.programaId",
+    "40f19a1d-2c72-4ef8-b12b-20c6dfeb59e1": "fk_usuarios._id_to_actividades.evaluaciones.[0].participanteId",
+    "3ab19987-0916-49e7-aa35-14ef4761fb7b": "nombre",
+    "01db0869-af61-4284-8746-8302659084a3": "seguimientos",
+    "2d20e807-2758-41f4-b8c6-3a1cd2cf07d8": "comentarios",
+    "8c06858e-572d-4780-92ed-81761a0d8a44": "aspectosEvaluado",
+    "a9533cc0-c4dd-4fe3-a2a8-b363c315c046": "nivelProgreso",
+    "25565b16-1533-4e1a-9689-47391e5ec2dc": "observaciones",
+    "2abc18b2-b145-4820-8a60-a9f699f8c8f9": "participanteId",
+    "e7e23a71-db49-487a-baa4-bdedf60462fd": "enlace",
+    "67d97f99-e4d8-4289-9300-9bb362a0abdf": "estado",
+    "28a81dd8-4cda-4c96-828c-7a096960bfa4": "observacion",
+    "8e3c776d-5989-44d0-b16d-b8f505424dcb": "descripcion",
+    "826e2d3c-08e0-416e-b9fe-0e9ffb9c473f": "espacios",
+    "12ca2316-58e7-4f1e-8c7a-26d2f7b7daef": "_id",
+    "cf936ee6-5549-467f-abfa-db950244b8dd": "nombre",
+    "1981abda-c2bb-4917-9a3e-c4203c54df0a": "tipo",
+    "b1189460-45f4-417a-95cf-ac86e53fbb8c": "capacidad",
+    "27986a12-35e1-4282-b33d-af2da90c5d04": "ubicacion",
+    "12f58bcf-f387-4125-ac8b-7a8c4bbae8a1": "disponible",
+    "b47f12fb-a113-43b2-8528-4c929074cda5": "recursos",
+    "78bc3ec7-fbbf-49f1-ba32-31b8c26f02a7": "fk_espacios._id_to_sesiones.espacioId",
+    "48d65566-2fc9-4552-b1f6-c8e95fdb7821": "actividadId",
+    "55d692cb-9e97-4c98-bfd1-de2c708d6e47": "foros",
+    "181dc7f9-8313-4b75-bac8-ce3a76b9a688": "_id",
+    "e05318cb-ae9a-457d-827b-71a2a2b61c6c": "titulo",
+    "de226986-0317-4d79-95c2-37ea474482f9": "contenido",
+    "54caa6cc-1153-42bd-99b9-2063b81f9c50": "fechaPublicacion",
+    "e232c888-d465-45c7-8820-3aed60f5ef7b": "actividadId",
+    "5764d050-efcd-4397-bed4-85c24dfaa0c2": "creadorId ",
+    "220deda6-a37a-46f4-8f44-f2eec859bae8": "archivosAdjuntos",
+    "6fc28fbf-503b-432c-a796-b9c542a2bb45": "nombre",
+    "be20b7b1-c8cf-48b2-a37b-f3d4b774cbf8": "tipo",
+    "e18b784a-50e6-4ee6-bee3-3835e519b925": "URL",
+    "0239e86e-87b7-4d47-9f85-db99cb4d1bcb": "descripcion",
+    "02c6d284-3db7-4766-bf65-d91a85ea39d9": "fk_usuarios._id_to_anuncios.creadorId ",
+    "c783df0c-16a2-42f1-9a68-462994122aa5": "fk_usuarios._id_to_foros.creadorId ",
+    "6e5d5364-b49b-482a-bc92-8f7cd273d9b1": "comentarios",
+    "054b0ef7-a3af-4f53-a97d-6a378181ce4e": "_id",
+    "c00b73d9-6079-46e4-83ef-1f115f04c88c": "foroId",
+    "47add81b-30af-4e57-868b-c9a9bfd77828": "usuarioId",
+    "47bc6c9e-0dda-43a4-a276-dac2753bbea8": "contenido",
+    "26a4265a-a1a4-48bc-882a-81fcc0fc72da": "fechaPublicacion",
+    "15481c03-550d-4fcd-9185-afc623baa4de": "archivosAdjuntos",
+    "b95f2d47-5d14-419a-9946-cede60c6acff": "nombre",
+    "ba213214-1cf6-4fc1-9022-79aef1624bd0": "tipo",
+    "27f4b6d1-416f-40a8-84c4-082b643e2bc5": "URL",
+    "1ee9070b-7192-4e46-bbbd-d43d336b6d92": "descripcion",
+    "85275ca8-c143-48a2-af89-e18af46f1625": "replicasComentarios",
+    "c36d5912-4658-4bc9-b367-3eabcfd9b54f": "contenido",
+    "ec01558d-06f9-47f5-90b0-75bddf51d05d": "fechaPublicacion",
+    "071d5275-d680-4a15-97ae-c745b66f434d": "archivosAdjuntos",
+    "cf6cbefe-abbc-465a-a594-de171fd3b61a": "nombre",
+    "c3ab5488-a8f1-4d52-9b6a-0898e451bae6": "tipo",
+    "de29e610-a096-4700-b2a3-1f57caac608d": "URL",
+    "60892569-f601-4b28-a5dc-4e0545455283": "descripcion",
+    "61be1d97-83a8-423d-9d77-168e8b247b24": "usuarioId",
+    "6ab62e45-5235-4953-bcd3-f31d38cc87c4": "fk_foros._id_to_comentarios.foroId",
+    "da674d7e-80c8-44ca-a9ec-1e9dc8884182": "fk_usuarios._id_to_comentarios.usuarioId",
+    "1b516765-a04f-4576-a07f-bb05ea5b6636": "fk_usuarios._id_to_comentarios.replicasComentarios.[0].usuarioId",
+    "5a4e1219-74ea-4286-9625-67a69d56d61b": "estado",
+    "cb1fadfb-a81b-4103-b838-c3d7bdaca8d1": "fechaPublicacion",
+    "4b194916-3854-4a91-a935-614231c05eee": "fk_actividades._id_to_foros.actividadId",
+    "d5799304-75f8-4252-a541-b7f0000568cb": "fk_actividades._id_to_anuncios.actividadId",
+    "61c910cb-c88a-40b8-9051-5ffda8a21924": "fechaInscripcion",
+    "a2eabc3d-3392-432b-93fa-59ea305362cf": "fechaAprobacion",
+    "3e980ed2-7b3b-48a5-a8c5-8e34a9e27793": "tipo",
+    "d5ed8af3-d4aa-44e0-93ee-5a21eda15b0f": "nombre",
+    "b23d3de2-b3ef-446b-a1b7-1813ee549132": "cantidad",
+    "bd7277f3-de6b-4013-b9b1-e647e3a62237": "fk_usuarios._id_to_actividades.seguimientos.[0].participanteId",
+    "032effe7-ab53-425c-8bbf-943b4c4197b3": "nombre",
+    "16aa1144-a9aa-4535-8076-d02b94f286ba": "tipo"
+  },
+  "definitions": {
+    "type": "definitions",
+    "properties": [],
+    "GUID": "05eaf021-e345-456a-a4d7-c9d79b5b9f8e"
+  },
+  "polyglotDefinitions": {
+    "type": "polyglotDefinitions",
+    "properties": [],
+    "GUID": "9a4fc59d-ceb2-4d74-94d0-7817452a4ced"
+  },
+  "externalDefinitions": {
+    "type": "externalDefinitions",
+    "properties": [],
+    "GUID": "2d83c816-f979-4242-9395-f1820d90c644"
+  },
+  "sources": [],
+  "decorativeSymbols": [],
+  "dbVersion": "v7.x",
+  "dbVendor": "MongoDB",
+  "appTarget": "MONGODB",
+  "creationTS": "2026-04-09T00:58:55.174Z",
+  "GUID": "ebf39606-9021-47d6-b3ee-5d704af111a5",
+  "isLineageEnabled": false,
+  "lastModifTS": "2026-05-26T15:04:33.729Z",
+  "persistenceSchemaVersion": "8",
+  "isCreatedByPlugin": true,
+  "pluginInformation": {
+    "pluginEngineVersion": "1.0.0"
+  },
+  "applicationInformation": {
+    "version": "8.3.5"
+  },
+  "hackoladeMeta": {},
+  "settings": {
+    "centralPane": {
+      "dbLevel": {
+        "erd": [
+          {
+            "GUID": "7ffe5c83-0837-46e4-9bb1-274100c37877",
+            "x": 10021.736796536774,
+            "y": 27403.36972022118,
+            "width": 233,
+            "height": 210,
+            "color": {
+              "hex": "#9c27b0"
+            }
+          },
+          {
+            "GUID": "61320d2f-5358-41bf-918f-32f6ea61ba63",
+            "x": 10520.173160173126,
+            "y": 27432.903053554513,
+            "width": 357.3428571428572,
+            "height": 731.780952380951,
+            "color": {
+              "hex": "#e65100"
+            }
+          },
+          {
+            "GUID": "1ead5845-2b3c-486c-82a1-cfd24effcaa2",
+            "x": 9969.260083113477,
+            "y": 27733.492966107777,
+            "width": 329.85714285714283,
+            "height": 393.8571428571429,
+            "color": {}
+          },
+          {
+            "GUID": "23bf32cb-031c-4a38-9d7f-acdaedd667bd",
+            "x": 10539.55714285714,
+            "y": 26984.99086681548,
+            "width": 309.1428571428571,
+            "height": 382.91428571428565,
+            "color": {
+              "hex": "#000000"
+            }
+          },
+          {
+            "GUID": "5580ac3c-cc44-424c-9182-e6b6e3b54619",
+            "x": 10000.223549107148,
+            "y": 27004.78995535717,
+            "width": 274.80000000000007,
+            "height": 159.59999999999985,
+            "color": {
+              "hex": "#b71c1c"
+            }
+          },
+          {
+            "GUID": "826e2d3c-08e0-416e-b9fe-0e9ffb9c473f",
+            "x": 9583.86666666667,
+            "y": 27845.06666666668,
+            "width": 260,
+            "height": 208,
+            "color": {
+              "hex": "#4a148c"
+            }
+          },
+          {
+            "GUID": "55d692cb-9e97-4c98-bfd1-de2c708d6e47",
+            "x": 9575.366666666681,
+            "y": 26994.866666666687,
+            "width": 257,
+            "height": 266,
+            "color": {}
+          },
+          {
+            "GUID": "6e5d5364-b49b-482a-bc92-8f7cd273d9b1",
+            "x": 9554.40000000001,
+            "y": 27392.533333333362,
+            "width": 296.00000000000085,
+            "height": 433.80000000000166,
+            "color": {}
+          }
+        ],
+        "erdDefinitions": {
+          "erd": [],
+          "rootPath": [],
+          "entities": [],
+          "decorativeSymbols": []
+        },
+        "buckets": [
+          {
+            "x": 9514.40000000001,
+            "y": 26944.99086681548,
+            "GUID": "5fc3ea44-9172-4a0d-aca9-0e6a75ae8289"
+          }
+        ],
+        "collapsedNodes": [],
+        "activeRelationship": "",
+        "activeRelationshipFields": {
+          "childField": [],
+          "parentField": []
+        },
+        "selectedCollections": [],
+        "displayColorPicker": false,
+        "graphView": {
+          "erd": [],
+          "buckets": [],
+          "decorativeSymbols": [],
+          "forceLayout": true,
+          "defaultLinkLength": 300,
+          "options": []
+        },
+        "diagramViews": [],
+        "decorativeSymbols": [],
+        "nestedCollectionsLayout": "horizontal",
+        "options": [
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "7ffe5c83-0837-46e4-9bb1-274100c37877"
+          },
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "61320d2f-5358-41bf-918f-32f6ea61ba63"
+          },
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "1ead5845-2b3c-486c-82a1-cfd24effcaa2"
+          },
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "23bf32cb-031c-4a38-9d7f-acdaedd667bd"
+          },
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "5580ac3c-cc44-424c-9182-e6b6e3b54619"
+          },
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "6e5d5364-b49b-482a-bc92-8f7cd273d9b1"
+          },
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "826e2d3c-08e0-416e-b9fe-0e9ffb9c473f"
+          }
+        ],
+        "relationshipUpdateDisabled": false
+      },
+      "collectionLevel": {},
+      "changed": false
+    },
+    "dtDiagram": {
+      "collapsedNodes": [],
+      "shouldDistributeCollections": false
+    }
+  }
+}
