@@ -38,6 +38,10 @@ public class ActividadServiceImp implements IActividadService{
             throw new IllegalArgumentException("No existe el usuario que propone la actividad.");
         }
 
+        if (!proponente.isActivo()) {
+            throw new IllegalArgumentException("El usuario que propone la actividad debe estar activo en el sistema.");
+        }
+
         String rolProponente = proponente.getRol().name();
 
         if(!"Instructor".equals(rolProponente) && !"Coordinador".equals(rolProponente) && !"Administrador".equals(rolProponente)){
@@ -49,6 +53,10 @@ public class ActividadServiceImp implements IActividadService{
 
             if(instructor == null){
                 throw new IllegalArgumentException("No existe el usuario que imparte la actividad.");
+            }
+
+            if (!instructor.isActivo()) {
+                throw new IllegalArgumentException("El usuario que imparte la actividad debe estar activo en el sistema.");
             }
 
             String rolInstructor = instructor.getRol().name();
@@ -74,6 +82,10 @@ public class ActividadServiceImp implements IActividadService{
                 throw new IllegalArgumentException("No existe el usuario que aprueba la actividad.");
             }
 
+            if (!aprobador.isActivo()) {
+                throw new IllegalArgumentException("El usuario que aprueba la actividad debe estar activo en el sistema.");
+            }
+
             String rolAprobador = aprobador.getRol().name();
 
             if (!"Administrador".equals(rolAprobador) && !"Coordinador".equals(rolAprobador)) {
@@ -83,6 +95,14 @@ public class ActividadServiceImp implements IActividadService{
 
         if ("Propuesta".equals(estado) && actividad.getAprobadoPor() != null) {
             throw new IllegalArgumentException("Una actividad en estado Propuesta no puede tener aprobador hasta completar la revisión administrativa.");
+        }
+
+        if ("Finalizada".equals(estado) && actividad.getInscripciones() != null && !actividad.getInscripciones().isEmpty()) {
+            throw new IllegalArgumentException("No se pueden agregar participantes a una actividad en estado Finalizada.");
+        }
+
+        if ("Finalizada".equals(estado) && actividad.getEvaluaciones() != null && !actividad.getEvaluaciones().isEmpty()) {
+            throw new IllegalArgumentException("No se pueden agregar evaluaciones a una actividad en estado Finalizada.");
         }
 
         if (actividad.getEvaluaciones() != null) {
@@ -101,6 +121,10 @@ public class ActividadServiceImp implements IActividadService{
 
                 if (!"Participante".equals(participante.getRol().name())) {
                     throw new IllegalArgumentException("Solo los participantes pueden inscribirse en actividades.");
+                }
+
+                if (!participante.isActivo()) {
+                    throw new IllegalArgumentException("El participante inscrito debe estar activo en el sistema.");
                 }
             }
         }
@@ -125,6 +149,10 @@ public class ActividadServiceImp implements IActividadService{
             if (!"Participante".equals(participante.getRol().name())) {
                 throw new IllegalArgumentException("Solo los participantes pueden evaluar actividades.");
             }
+
+            if (!participante.isActivo()) {
+                throw new IllegalArgumentException("El participante que evalúa debe estar activo en el sistema.");
+            }
         }
 
     @Override
@@ -147,6 +175,50 @@ public class ActividadServiceImp implements IActividadService{
         ActividadesModel actividadExistente = actividadesRepository.findById(id).orElse(null);
         if (actividadExistente == null) {
             throw new IllegalArgumentException("La actividad no existe.");
+        }
+
+        if ("Finalizada".equals(actividadExistente.getEstado().name())) {
+            if (actividadActualizada.getInscripciones() != null && !actividadActualizada.getInscripciones().equals(actividadExistente.getInscripciones())) {
+                throw new IllegalArgumentException("No se pueden modificar participantes de una actividad Finalizada.");
+            }
+
+            if (actividadActualizada.getEvaluaciones() != null && !actividadActualizada.getEvaluaciones().equals(actividadExistente.getEvaluaciones())) {
+                throw new IllegalArgumentException("No se pueden modificar evaluaciones de una actividad Finalizada.");
+            }
+        }
+
+        String estadoActualizado = actividadActualizada.getEstado().name();
+
+        if ("Finalizada".equals(estadoActualizado) && actividadActualizada.getInscripciones() != null && !actividadActualizada.getInscripciones().isEmpty()) {
+            throw new IllegalArgumentException("No se pueden agregar participantes a una actividad en estado Finalizada.");
+        }
+
+        if ("Finalizada".equals(estadoActualizado) && actividadActualizada.getEvaluaciones() != null && !actividadActualizada.getEvaluaciones().isEmpty()) {
+            throw new IllegalArgumentException("No se pueden agregar evaluaciones a una actividad en estado Finalizada.");
+        }
+
+        if (actividadActualizada.getInscripciones() != null) {
+            for (InscripcionActividad inscripcion : actividadActualizada.getInscripciones()) {
+                UsuariosModel participante = usuarioService.buscarUsuarioPorId(inscripcion.getParticipanteId());
+
+                if (participante == null) {
+                    throw new IllegalArgumentException("El participante inscrito no existe.");
+                }
+
+                if (!"Participante".equals(participante.getRol().name())) {
+                    throw new IllegalArgumentException("Solo los participantes pueden inscribirse en actividades.");
+                }
+
+                if (!participante.isActivo()) {
+                    throw new IllegalArgumentException("El participante inscrito debe estar activo en el sistema.");
+                }
+            }
+        }
+
+        if (actividadActualizada.getEvaluaciones() != null) {
+            for (EvaluacionActividad evaluacion : actividadActualizada.getEvaluaciones()) {
+                validarEvaluacion(evaluacion);
+            }
         }
 
         actividadActualizada.setId(id);

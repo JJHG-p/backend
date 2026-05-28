@@ -1,5 +1,6 @@
 package backend.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.types.ObjectId;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import backend.Model.ComentariosModel;
 import backend.Model.ForosModel;
+import backend.Model.ReplicaComentario;
 import backend.Model.UsuariosModel;
 import backend.Repository.IComentariosRepository;
 
@@ -56,6 +58,8 @@ public class ComentarioServiceImp implements IComentarioService{
             }
         }
 
+        validarParticipacionComentario(comentario);
+
         return comentariosRepository.save(comentario);
     }
 
@@ -80,5 +84,63 @@ public class ComentarioServiceImp implements IComentarioService{
         comentarioActualizado.setId(id);
 
         return comentariosRepository.save(comentarioActualizado);
+    }
+
+    @Override
+    public ComentariosModel agregarReplica(ObjectId comentarioId, ReplicaComentario replica) {
+        ComentariosModel comentarioExistente = comentariosRepository.findById(comentarioId).orElse(null);
+
+        if (comentarioExistente == null) {
+            throw new IllegalArgumentException("El comentario no existe.");
+        }
+
+        ForosModel foro = foroService.buscarForoPorId(comentarioExistente.getForoId());
+        validarEstadoForoParticipacion(foro);
+        validarUsuarioActivoExistente(replica.getUsuarioId(), "El usuario de la réplica");
+
+        if (comentarioExistente.getReplicasComentarios() == null) {
+            comentarioExistente.setReplicasComentarios(new ArrayList<>());
+        }
+
+        comentarioExistente.getReplicasComentarios().add(replica);
+
+        return comentariosRepository.save(comentarioExistente);
+    }
+
+    private void validarParticipacionComentario(ComentariosModel comentario) {
+        ForosModel foro = foroService.buscarForoPorId(comentario.getForoId());
+        validarEstadoForoParticipacion(foro);
+        validarUsuarioActivoExistente(comentario.getUsuarioId(), "El usuario que comenta");
+
+        if (comentario.getReplicasComentarios() != null) {
+            for (var replica : comentario.getReplicasComentarios()) {
+                validarUsuarioActivoExistente(replica.getUsuarioId(), "El usuario de la réplica");
+            }
+        }
+    }
+
+    private void validarEstadoForoParticipacion(ForosModel foro) {
+        if (foro == null) {
+            throw new IllegalArgumentException("El foro no existe.");
+        }
+
+        if ("Cerrado".equals(foro.getEstado().name())) {
+            throw new IllegalArgumentException("El foro está Cerrado y no permite participación.");
+        }
+
+        if (!"Abierto".equals(foro.getEstado().name())) {
+            throw new IllegalArgumentException("Solo se puede participar en foros en estado Abierto.");
+        }
+    }
+
+    private void validarUsuarioActivoExistente(ObjectId usuarioId, String etiquetaUsuario) {
+        UsuariosModel usuario = usuarioService.buscarUsuarioPorId(usuarioId);
+        if (usuario == null) {
+            throw new IllegalArgumentException(etiquetaUsuario + " no está registrado.");
+        }
+
+        if (!usuario.isActivo()) {
+            throw new IllegalArgumentException(etiquetaUsuario + " debe estar activo en el sistema.");
+        }
     }
 }

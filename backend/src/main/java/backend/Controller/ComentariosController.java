@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import backend.Model.ComentariosModel;
+import backend.Model.ReplicaComentario;
 import backend.Service.IComentarioService;
 import jakarta.validation.Valid;
 
@@ -58,6 +59,15 @@ public class ComentariosController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @PostMapping("/{id}/replicas")
+    public ResponseEntity<?> agregarReplica(@PathVariable ObjectId id, @Valid @RequestBody ReplicaComentario replica) {
+        try {
+            return new ResponseEntity<>(comentarioService.agregarReplica(id, replica), HttpStatus.CREATED);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
     
-    
+
 }
